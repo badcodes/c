@@ -1,0 +1,5 @@
+..\src\files.c(7): Error! E1009: Expecting ',' but found '*'
+..\src\files.c(7): Error! E1009: Expecting ',' but found '*'
+..\src\files.c(7): Error! E1127: Type required in parameter list
+..\src\files.c(8): Warning! W131: No prototype found for function 'fileno'
+..\src\files.c(13): Error! E1011: Symbol 'O_RDONLY' has not been declared

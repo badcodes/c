@@ -1,0 +1,16 @@
+!define BLANK ""
+R:\workspace\c\cread\bin\dos\main.obj : R:\workspace\c\cread\src\main.c
+ @R:
+ cd R:\workspace\c\cread\bin\dos
+ *wcc ..\..\src\main.c -i="R:\Program\develop\watcom/h" -w4 -e25 -zq -od -d2&
+ -bt=dos -fo=.obj -ms
+
+R:\workspace\c\cread\bin\dos\cread.com : R:\workspace\c\cread\bin\dos\main.o&
+bj
+ @R:
+ cd R:\workspace\c\cread\bin\dos
+ @%write cread.lk1 FIL main.obj
+ @%append cread.lk1 
+ *wlink name cread d all SYS dos com op m op maxe=25 op q op symf op el @cre&
+ad.lk1
+

@@ -1,0 +1,200 @@
+
+
+LESSKEY(1)          Unix Programmer's Manual           LESSKEY(1)
+
+
+NNNAAAMMMEEE
+     lesskey - specify key bindings for less
+
+SSSYYYNNNOOOPPPSSSIIISSS
+     llleeesssssskkkeeeyyy [[[-ooo ooouuutttpppuuuttt]]] [[[iiinnnpppuuuttt]]]
+
+DDDEEESSSCCCRRRIIIPPPTTTIIIOOONNN
+     _L_e_s_s_k_e_y is used to specify a set of key bindings to be  used
+     by  _l_e_s_s.  The input file is a text file which describes the
+     key bindings, and the output file is a binary file which  is
+     used  by _l_e_s_s. If no input file is specified, standard input
+     is used.  If no output file  is  specified,  $HOME/_less  is
+     used.
+
+     The input file consists of lines of the form:
+
+          string <whitespace> action [extra-string] <newline>
+
+     Whitespace is any sequence of  one  or  more  spaces  and/or
+     tabs.   The  "string" is the command key(s) which invoke the
+     action.  The string may  be  a  single  command  key,  or  a
+     sequence  of up to 15 keys.  The "action" is the name of the
+     less action, from the list below.   The  characters  in  the
+     "string"  may appear literally, or be prefixed by a carat to
+     indicate a control key.  A backslash may be  used  to  cause
+     the  following  character to be taken literally.  Characters
+     which must be preceded by backslash  include  carat,  space,
+     tab  and  the backslash itself.  A backslash followed by one
+     to three octal digits may be used to specify a character  by
+     its  octal  value.  Blank lines and lines which start with a
+     pound sign (#) are ignored.
+
+     An action may be followed by an extra string.   This  string
+     is  parsed  after the command is entered, just as if it were
+     entered on the command line.  This feature can  be  used  in
+     certain cases to extend the functionality of a command.  For
+     example, these entries would create a pair  of  commands  to
+     turn on/off line numbers using _v_i syntax:
+
+          :set\ nu  toggle-option -N
+          :set\ nonu toggle-option +N
+
+     See also the ":ta" command in the example below.
+
+
+EEEXXXAAAMMMPPPLLLEEE
+     The following  input  file  describes  the  set  of  default
+     command keys used by less:
+
+          r         forw-line
+          n         forw-line
+          e         forw-line
+          j         forw-line
+          ^E        forw-line
+          ^N        forw-line
+          k         back-line
+
+
+                                                                1
+
+
+
+
+LESSKEY(1)          Unix Programmer's Manual           LESSKEY(1)
+
+
+          y         back-line
+          ^Y        back-line
+          ^K        back-line
+          ^P        back-line
+          J         forw-line-force
+          K         back-line-force
+          Y         back-line-force
+          d         forw-scroll
+          ^D        forw-scroll
+          u         back-scroll
+          ^U        back-scroll
+          '         back-scroll
+          \40       forw-screen
+          f         forw-screen
+          ^F        forw-screen
+          ^V        forw-screen
+          b         back-screen
+          ^B        back-screen
+          \33v      back-screen
+          z         forw-window
+          w         back-window
+          F         forw-forever
+          R         repaint-flush
+          r         repaint
+          ^R        repaint
+          ^L        repaint
+          g         goto-line
+          <         goto-line
+          \33<      goto-line
+          p         percent
+          %         percent
+          {         forw-bracket {}
+          }         back-bracket {}
+          (         forw-bracket ()
+          )         back-bracket ()
+          [         forw-bracket []
+          ]         back-bracket []
+          \33^F forw-bracket
+          \33^B back-bracket
+          G         goto-end
+          \33>      goto-end
+          >         goto-end
+          P         goto-end
+          =         status
+          ^G        status
+          :f        status
+          /         forw-search
+          ?         back-search
+          \33/      forw-search *
+          \33?      back-search *
+          n         repeat-search
+          \33n      repeat-search-all
+          N         reverse-search
+          \33N      reverse-search-all
+          m         set-mark
+          '         goto-mark
+
+
+                                                                2
+
+
+
+
+LESSKEY(1)          Unix Programmer's Manual           LESSKEY(1)
+
+
+          ^X^X      goto-mark
+          E         examine
+          :e        examine
+          ^X^V      examine
+          :n        next-file
+          :p        prev-file
+          :x        index-file
+          -         toggle-option
+          :t        toggle-option t
+          s         toggle-option o
+          _         display-option
+          |         pipe
+          v         visual
+          !         shell
+          +         firstcmd
+          H         help
+          h         help
+          V         version
+          q         quit
+          :q        quit
+          :Q        quit
+          ZZ        quit
+          \33\33 quit
+
+     Commands specified  by  _l_e_s_s_k_e_y  take  precedence  over  the
+     default  commands.  A default command key may be disabled by
+     including it in the key file with the action "invalid".
+
+     "Extended" keycodes on PCs are entered with a leading \80 instead of \00
+
+
+SSSEEEEEE AAALLLSSSOOO
+     less(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                3
+
+

@@ -1,0 +1,87 @@
+_brk 16A0 0 CODE
+__iob 212 1790 DATA
+_free 6E8 0 CODE
+amodl 1510 0 CODE
+lmodl 1460 0 CODE
+_main 110 0 CODE
+_sbrk 16A5 0 CODE
+adivl 1500 0 CODE
+ldivl 1430 0 CODE
+_exit 810 0 CODE
+start 0 0 CODE
+_buildpath 211 0 CODE
+__fullpath B2 1790 DATA
+___in_crithand__ CB4 1790 BSS
+_set_crithand 330 0 CODE
+small_model 0 0
+__H_TEXT 1790 0 CODE
+__L_TEXT 0 0 CODE
+_fseek 11BC 0 CODE
+_lseek 1370 0 CODE
+_close 1610 0 CODE
+_fputc 1000 0 CODE
+_write 1760 0 CODE
+_ftell 12C1 0 CODE
+_ioctl 1350 0 CODE
+__Bbss 1BA0 1790 BSS
+__Hbss CB6 1790 BSS
+fwait$$ 9B90 0
+__Lbss 410 1790 BSS
+_errno 410 1790 BSS
+_msdos 300 0 CODE
+_getcurdir 0 0
+__buffree 1688 0 CODE
+__tfilesptr CAC 1790 BSS
+__atexitptr 4AA 1790 BSS
+__outdone CB2 1790 BSS
+_vfprintf 8F0 0 CODE
+__bufallo 1660 0 CODE
+__ctype_ 302 1790 DATA
+__getargs 3C0 0 CODE
+__Bstack 2450 2450
+_realloc 6F8 0 CODE
+__Hstack 400 2450
+__Lstack 0 2450
+__cleanup 1520 0 CODE
+__flsbuf 10B0 0 CODE
+__argc_ 498 1790 BSS
+__Bdata 1790 1790 DATA
+__Hdata 404 1790 DATA
+__Ldata 0 1790 DATA
+_strrchr 7E0 0 CODE
+_toupper 8D0 0 CODE
+_malloc 590 0 CODE
+_environ 86 1790 DATA
+_getcwd 264 0 CODE
+__sibuf 4AC 1790 BSS
+__sobuf 8AC 1790 BSS
+asamodl 14C0 0 CODE
+_fclose 1550 0 CODE
+aslmodl 1480 0 CODE
+endprof 1780 0 CODE
+_printf 830 0 CODE
+_remove 1630 0 CODE
+_unlink 1640 0 CODE
+_strlen 13C0 0 CODE
+_fflush 1700 0 CODE
+_strcat 890 0 CODE
+asadivl 1490 0 CODE
+_strchr 13A0 0 CODE
+asldivl 1450 0 CODE
+_strncpy 7A0 0 CODE
+small_code 0 0
+__Htext 1790 0 CODE
+__Ltext 1790 0 CODE
+startup 3B0 0 CODE
+_getdrv 2E0 0 CODE
+_memcpy 850 0 CODE
+_strcpy 8B0 0 CODE
+small_data 0 0
+_isatty 1320 0 CODE
+%segments
+_TEXT 0 178F CODE
+data 0 CB5 DATA
+stack 0 3FF 
+%locals
+FULLNAME.OBJ
+FULLNAME.OBJ

@@ -1,0 +1,20 @@
+#ifndef ZCMD_ZCMD_HEADER
+#define ZCMD_ZCMD_HEADER
+    #include "version.h"
+    #include "config.h"
+    #include "xrzlib\list.h"
+
+    int zcmd_process(int argc,char** argv);
+
+    int quote_onneed(char* dst,const char* src);
+
+    int zcmd_shell(int argc,char** argv);
+
+    int zcmd_process_line(const char* cmdline);
+    #define zcmd_shell_line(LINE) system((LINE));
+
+    int zcmd_process_list(list arglist);
+    int zcmd_shell_list(list arglist);
+    
+
+#endif

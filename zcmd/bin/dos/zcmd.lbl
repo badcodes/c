@@ -1,0 +1,13 @@
+FIL ..\bin\dos\cd.obj
+FIL ..\bin\dos\cmd.obj
+FIL ..\bin\dos\echo.obj
+FIL ..\bin\dos\exit.obj
+FIL ..\bin\dos\filecmd.obj
+FIL ..\bin\dos\help.obj
+FIL ..\bin\dos\modpath.obj
+FIL ..\bin\dos\printf.obj
+FIL ..\bin\dos\run.obj
+FIL ..\bin\dos\script.obj
+FIL ..\bin\dos\utils.obj
+FIL ..\bin\dos\zcmd.obj
+

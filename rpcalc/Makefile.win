@@ -1,0 +1,42 @@
+# Project: rpcalc
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = rpcalc_private.res
+OBJ  = ../../VC/linCalc/hash.o ../../VC/linCalc/linCalc.o ../../VC/linCalc/list.o ../../VC/linCalc/stack.o $(RES)
+LINKOBJ  = ../../VC/linCalc/hash.o ../../VC/linCalc/linCalc.o ../../VC/linCalc/list.o ../../VC/linCalc/stack.o $(RES)
+LIBS =  -L"D:/Programe/MinGW/lib" -L"d:/Programe/Dev-Cpp/lib"  -lgmon -pg  -g3 
+INCS =  -I"D:/Programe/MinGW/include"  -I"d:/Programe/Dev-Cpp/include" 
+CXXINCS =  -I"D:/Programe/MinGW/lib/gcc/mingw32/3.4.2/include"  -I"D:/Programe/MinGW/include/c++/3.4.2/backward"  -I"D:/Programe/MinGW/include/c++/3.4.2/bits"  -I"D:/Programe/MinGW/include/c++/3.4.2/debug"  -I"D:/Programe/MinGW/include/c++/3.4.2/ext"  -I"D:/Programe/MinGW/include/c++/3.4.2/mingw32"  -I"d:/Programe/Dev-Cpp/include" 
+BIN  = rpcalc.exe
+CXXFLAGS = $(CXXINCS)   -pg -g3
+CFLAGS = $(INCS)   -pg -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before rpcalc.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "rpcalc.exe" $(LIBS)
+
+../../VC/linCalc/hash.o: ../../VC/linCalc/hash.c
+	$(CC) -c ../../VC/linCalc/hash.c -o ../../VC/linCalc/hash.o $(CFLAGS)
+
+../../VC/linCalc/linCalc.o: ../../VC/linCalc/linCalc.c
+	$(CC) -c ../../VC/linCalc/linCalc.c -o ../../VC/linCalc/linCalc.o $(CFLAGS)
+
+../../VC/linCalc/list.o: ../../VC/linCalc/list.c
+	$(CC) -c ../../VC/linCalc/list.c -o ../../VC/linCalc/list.o $(CFLAGS)
+
+../../VC/linCalc/stack.o: ../../VC/linCalc/stack.c
+	$(CC) -c ../../VC/linCalc/stack.c -o ../../VC/linCalc/stack.o $(CFLAGS)
+
+rpcalc_private.res: rpcalc_private.rc 
+	$(WINDRES) -i rpcalc_private.rc --input-format=rc -o rpcalc_private.res -O coff 

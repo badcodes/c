@@ -1,0 +1,2028 @@
+*** funcs.h	Sat Jul 06 15:50:04 1991
+--- ..\myles177\funcs.h	Wed Sep 11 20:53:48 1991
+***************
+*** 75,81 ****
+  	public void opt_W ();
+  	public void opt_query ();
+  	public void init_option ();
+- 	public struct option * findopt ();
+  	public int iread ();
+  	public void intread ();
+  	public long get_time ();
+--- 75,80 ----
+*** less.h	Sat Jul 06 15:50:18 1991
+--- ..\myles177\less.h	Fri Oct 04 21:24:24 1991
+*************** typedef union parg
+*** 96,103 ****
+  #define	NORMAL		(0)
+  #define	UNDERLINE	(1)
+  #define	BOLD		(2)
+! #define	BLINK		(3)
+  #define	INVIS		(4)
+  
+  #define	CONTROL(c)		((c)&037)
+  #define	ESC			CONTROL('[')
+--- 96,106 ----
+  #define	NORMAL		(0)
+  #define	UNDERLINE	(1)
+  #define	BOLD		(2)
+! #define	BLINKING	(3)
+  #define	INVIS		(4)
++ #ifdef TURBOC
++ #define BOLD2		(5)
++ #endif
+  
+  #define	CONTROL(c)		((c)&037)
+  #define	ESC			CONTROL('[')
+*************** typedef union parg
+*** 107,113 ****
+--- 110,120 ----
+  /* Library function declarations */
+  offset_t lseek();
+  #define	BAD_LSEEK	((offset_t)-1)
++ #ifdef TURBOC
++ #include <conio.h>
++ #else
+  VOID_POINTER calloc();
++ #endif
+  
+  #define	ch_zero()	((POSITION)0)
+  #include "funcs.h"
+*** ch.c	Sat Jul 06 15:49:42 1991
+--- ..\myles177\ch.c	Fri Sep 13 21:35:40 1991
+***************
+*** 6,13 ****
+  
+  #include "less.h"
+  
+  public int file = -1;		/* File descriptor of the input file */
+! public int ignore_eoi;
+  
+  /*
+   * Pool of buffers holding the most recently used blocks of the input file.
+--- 6,17 ----
+  
+  #include "less.h"
+  
++ #ifdef TURBOC
++ #include <signal.h>
++ #endif
++ 
+  public int file = -1;		/* File descriptor of the input file */
+! public int ignore_eoi = 0;
+  
+  /*
+   * Pool of buffers holding the most recently used blocks of the input file.
+*************** fch_get()
+*** 191,196 ****
+--- 195,204 ----
+  			sleep(1);
+  			slept = 1;
+  		}
++ #ifdef TURBOC
++ 		if (kbhit())
++ 			raise(SIGINT);
++ #endif
+  		if (sigs)
+  			return (EOI);
+  	}
+*************** ch_seek(pos)
+*** 307,313 ****
+  	 * Set read pointer.
+  	 */
+  	ch_block = new_block;
+! 	ch_offset = pos % BUFSIZ;
+  	return (0);
+  }
+  
+--- 315,321 ----
+  	 * Set read pointer.
+  	 */
+  	ch_block = new_block;
+! 	ch_offset = (unsigned) pos % BUFSIZ;
+  	return (0);
+  }
+  
+*************** ch_flush()
+*** 498,504 ****
+  	 */
+  	ch_fpos = 0;
+  	ch_block = ch_fpos / BUFSIZ;
+! 	ch_offset = ch_fpos % BUFSIZ;
+  
+  	if (lseek(file, (offset_t)0, 0) == BAD_LSEEK)
+  	{
+--- 506,512 ----
+  	 */
+  	ch_fpos = 0;
+  	ch_block = ch_fpos / BUFSIZ;
+! 	ch_offset = (unsigned) ch_fpos % BUFSIZ;
+  
+  	if (lseek(file, (offset_t)0, 0) == BAD_LSEEK)
+  	{
+*** charset.c	Sat Jul 06 15:49:44 1991
+--- ..\myles177\charset.c	Thu Nov 14 12:22:52 1991
+*************** struct charset {
+*** 15,20 ****
+--- 15,21 ----
+  } charsets[] = {
+  	{ "ascii",	"8bcccbcc18b95.b"	},
+  	{ "latin1",	"8bcccbcc18b95.33b."	},
++ 	{ "ibmpc",	"8bcccbcc18b."	},
+  	{ NULL }
+  };
+  
+*************** struct charset {
+*** 23,29 ****
+  
+  static char chardef[256];
+  static char *binfmt = "\\%o";
+! public int binattr = BLINK;
+  
+  extern char *getenv();
+  
+--- 24,34 ----
+  
+  static char chardef[256];
+  static char *binfmt = "\\%o";
+! #ifdef TURBOC
+! public int binattr = BOLD2;
+! #else
+! public int binattr = BLINKING;
+! #endif
+  
+  extern char *getenv();
+  
+*************** icharset(name)
+*** 117,123 ****
+  
+  	error("invalid charset name", NULL_PARG);
+  	quit(1);
+! 	/*NOTREACHED*/
+  }
+  
+  /*
+--- 122,128 ----
+  
+  	error("invalid charset name", NULL_PARG);
+  	quit(1);
+! 	return (0);	/*NOTREACHED*/
+  }
+  
+  /*
+*************** init_charset()
+*** 143,150 ****
+  		ichardef(s);
+  		return;
+  	}
+! 
+  	(void) icharset("ascii");
+  
+  	s = getenv("LESSBINFMT");
+  	if (s != NULL && *s != '\0')
+--- 148,158 ----
+  		ichardef(s);
+  		return;
+  	}
+! #ifdef TURBOC
+! 	(void) icharset("ibmpc");
+! #else
+  	(void) icharset("ascii");
++ #endif
+  
+  	s = getenv("LESSBINFMT");
+  	if (s != NULL && *s != '\0')
+*************** init_charset()
+*** 154,160 ****
+  			switch (s[1])
+  			{
+  			case 'd':  binattr = BOLD;      break;
+! 			case 'k':  binattr = BLINK;     break;
+  			case 'u':  binattr = UNDERLINE; break;
+  			default:   binattr = NORMAL;    break;
+  			}
+--- 162,168 ----
+  			switch (s[1])
+  			{
+  			case 'd':  binattr = BOLD;      break;
+! 			case 'k':  binattr = BLINKING;  break;
+  			case 'u':  binattr = UNDERLINE; break;
+  			default:   binattr = NORMAL;    break;
+  			}
+*** command.c	Sat Jul 06 15:49:50 1991
+--- ..\myles177\command.c	Sat Jan 04 23:16:58 1992
+*************** prompt()
+*** 431,437 ****
+--- 431,439 ----
+  		so_exit();
+  	}
+  #if __MSDOS__
++ #ifndef TURBOC
+  	scroll_bar();
++ #endif
+  #endif
+  }
+  
+*** decode.c	Sun Mar 10 12:03:20 1991
+--- ..\myles177\decode.c	Thu Sep 12 21:16:36 1991
+*************** static char cmdtable[] =
+*** 44,52 ****
+--- 44,61 ----
+  	'\200','\107',0,		A_GOLINE,		/* home */
+  	'\200','\117',0,		A_GOEND,		/* end */
+  	'\200','\073',0,		A_HELP,			/* F1 */
++ 	'\200','\061',0,		A_NEXT_FILE,		/* ALT-n */
++ 	'\200','\031',0,		A_PREV_FILE,		/* ALT-p */
++ 	'\200','\022',0,		A_EXAMINE,		/* ALT-e */
++ 	'\200','\020',0,		A_QUIT,			/* ALT-q */
++ 	'\200','\055',0,		A_QUIT,			/* ALT-x */
++ #ifdef A_MODIFY_WINDOW
+  	'\200','\104',0,		A_MODIFY_WINDOW,	/* F10 */
++ #endif
++ #ifdef A_MODIFY_COLOURS
+  	'\200','\103',0,		A_MODIFY_COLOURS,	/* F9 */
+  #endif
++ #endif
+  	'\r',0,				A_F_LINE,
+  	'\n',0,				A_F_LINE,
+  	'e',0,				A_F_LINE,
+*************** static char cmdtable[] =
+*** 141,146 ****
+--- 150,156 ----
+  	'h',0,				A_HELP,
+  	'V',0,				A_VERSION,
+  	'q',0,				A_QUIT,
++ 	'Q',0,				A_QUIT,
+  	':','q',0,			A_QUIT,
+  	':','Q',0,			A_QUIT,
+  	'Z','Z',0,			A_QUIT,
+*************** add_cmdtable(filename)
+*** 308,314 ****
+  		close(f);
+  		return (-1);
+  	}
+! 	if ((t->t_start = (char *) calloc(len, sizeof(char))) == NULL)
+  	{
+  		free((char *)t);
+  		close(f);
+--- 318,324 ----
+  		close(f);
+  		return (-1);
+  	}
+! 	if ((t->t_start = (char *) calloc((unsigned)len, sizeof(char))) == NULL)
+  	{
+  		free((char *)t);
+  		close(f);
+*************** add_cmdtable(filename)
+*** 328,340 ****
+  	 * In a valid lesskey file, the last byte or 
+  	 * the second to the last byte must be zero.
+  	 */
+! 	if (n != len || (t->t_start[n-1] != '\0' && t->t_start[n-2] != '\0'))
+  	{
+  		free(t->t_start);
+  		free((char *)t);
+  		return (-1);
+  	}
+! 	t->t_end = t->t_start + n;
+  
+  	/*
+  	 * Link it into the list of tables.
+--- 338,350 ----
+  	 * In a valid lesskey file, the last byte or 
+  	 * the second to the last byte must be zero.
+  	 */
+! 	if (n != len || (t->t_start[(unsigned)n-1] != '\0' && t->t_start[(unsigned)n-2] != '\0'))
+  	{
+  		free(t->t_start);
+  		free((char *)t);
+  		return (-1);
+  	}
+! 	t->t_end = t->t_start + (unsigned) n;
+  
+  	/*
+  	 * Link it into the list of tables.
+*** edit.c	Sat Jul 06 15:49:54 1991
+--- ..\myles177\edit.c	Tue Oct 08 18:18:28 1991
+*************** edit(filename, just_looking)
+*** 40,46 ****
+--- 40,48 ----
+  	int just_looking;
+  {
+  	register int f;
++ #if LOGFILE
+  	char *s;
++ #endif
+  	int answer;
+  	int no_display;
+  	struct scrpos scrpos;
+*************** edit(filename, just_looking)
+*** 159,166 ****
+--- 161,170 ----
+  	new_file = 1;
+  
+  #if  __MSDOS__
++ #ifndef TURBOC
+  	top_filename();
+  #endif
++ #endif
+  
+  	if (every_first_cmd != NULL)
+  		ungetsc(every_first_cmd);
+*************** edit_list(list)
+*** 208,214 ****
+  	register char *es;
+  	register char *filename;
+  	char *good_filename;
+- 	IFILE save_curr_ifile;
+  
+  	/*
+  	 * good_filename keeps track of the first valid filename.
+--- 212,217 ----
+*************** edit_list(list)
+*** 216,222 ****
+  	good_filename = NULL;
+  	s = list;
+  	es = s + strlen(s);
+- 	save_curr_ifile = curr_ifile;
+  	while ((s = skipsp(s)) < es)
+  	{
+  		/*
+--- 219,224 ----
+*************** edit_list(list)
+*** 236,242 ****
+  		 *    entered after the position where that one already
+  		 *    was, instead of at the end. }}
+  		 */
+! 		if (edit(filename, 1) == 0 && good_filename == NULL)
+  			good_filename = filename;
+  	}
+  
+--- 238,244 ----
+  		 *    entered after the position where that one already
+  		 *    was, instead of at the end. }}
+  		 */
+! 		if (edit(filename, 0) == 0 && good_filename == NULL)
+  			good_filename = filename;
+  	}
+  
+*************** edit_list(list)
+*** 245,251 ****
+  	 */
+  	if (good_filename != NULL)
+  	{
+- 		curr_ifile = save_curr_ifile;
+  		(void) edit(good_filename, 0);
+  	}
+  }
+--- 247,252 ----
+*** filename.c	Sat Jul 06 15:49:58 1991
+--- ..\myles177\filename.c	Wed Sep 18 23:55:26 1991
+***************
+*** 6,11 ****
+--- 6,15 ----
+  #include <stdio.h>
+  #include "less.h"
+  
++ #ifdef TURBOC
++ #include <string.h>
++ #endif
++ 
+  extern char *getenv();
+  
+  extern int force_open;
+*************** homefile(filename)
+*** 42,48 ****
+  					sizeof(char));
+  		if (pathname == NULL)
+  			return (NULL);
+! 		sprintf(pathname, "%s\\%s", homedir, filename);
+  	}
+  #else
+  	if (homedir == NULL)
+--- 46,56 ----
+  					sizeof(char));
+  		if (pathname == NULL)
+  			return (NULL);
+! 		if ((homedir[strlen(homedir)-1] != '/')
+! 		 && (homedir[strlen(homedir)-1] != '\\'))
+! 			sprintf(pathname, "%s/%s", homedir, filename);
+! 		else
+! 			sprintf(pathname, "%s%s", homedir, filename);
+  	}
+  #else
+  	if (homedir == NULL)
+*************** find_helpfile()
+*** 65,76 ****
+  	register char *helpfile;
+  #if __MSDOS__
+  	extern char *searchpath();
+! 
+  	/*
+  	 * Look in current directory.
+  	 */
+  	if (access(HELPFILE,0) == 0)
+! 		return (HELPFILE);
+  	/*
+  	 * Find the basename of HELPFILE,
+  	 * and look for it in each directory in the search path.
+--- 73,87 ----
+  	register char *helpfile;
+  #if __MSDOS__
+  	extern char *searchpath();
+! #endif
+! 	if ((helpfile = getenv("LESSHELP")) != NULL)
+! 		return (save(helpfile));
+! #if __MSDOS__
+  	/*
+  	 * Look in current directory.
+  	 */
+  	if (access(HELPFILE,0) == 0)
+! 		return (save(HELPFILE));
+  	/*
+  	 * Find the basename of HELPFILE,
+  	 * and look for it in each directory in the search path.
+*************** find_helpfile()
+*** 81,88 ****
+  		helpfile++;
+  	return (save(searchpath(helpfile)));
+  #else
+- 	if ((helpfile = getenv("LESSHELP")) != NULL)
+- 		return (save(helpfile));
+  	return (save(HELPFILE));
+  #endif
+  }
+--- 92,97 ----
+*************** seek_filesize(f)
+*** 190,196 ****
+--- 199,222 ----
+   * Expand a filename, substituting any environment variables, etc.
+   */
+  #if GLOB
++ #ifdef TURBOC
++ extern char * expand();
++ 
++ 	public char *
++ glob(filename)
++ 	char *filename;
++ {
++ 	char *p;
++ 
++ 	filename = fexpand(filename);
++ 	if (filename == NULL)
++ 		return (NULL);
++ 	p = expand(fexpand(filename));
++ 	free (filename);
++ 	return p;
++ }
+  
++ #else /* not TURBOC */
+  FILE *popen();
+  
+  	public char *
+*************** glob(filename)
+*** 260,265 ****
+--- 286,292 ----
+  	return (gfilename);
+  }
+  
++ #endif /* TURBOC */
+  #else
+  
+  	public char *
+*** forwback.c	Sat Jul 06 15:50:00 1991
+--- ..\myles177\forwback.c	Sat Jan 04 23:29:14 1992
+*************** forw(n, pos, force, only_last, nblank)
+*** 107,113 ****
+  	 * repainting itself involves scrolling forward a screenful).
+  	 */
+  	do_repaint = (only_last && n > sc_height-1) || 
+! 		(forw_scroll >= 0 && n > forw_scroll && n != sc_height-1);
+  
+  	if (!do_repaint)
+  	{
+--- 107,113 ----
+  	 * repainting itself involves scrolling forward a screenful).
+  	 */
+  	do_repaint = (only_last && n > sc_height-1) || 
+! 		(n > get_forw_scroll() && n != sc_height-1);
+  
+  	if (!do_repaint)
+  	{
+*************** forw(n, pos, force, only_last, nblank)
+*** 146,151 ****
+--- 146,152 ----
+  				home();
+  			} else if (!first_time)
+  			{
++ 				if (onscreen(pos) < 0)
+  					putstr("...skipping...\n");
+  			}
+  		}
+*************** get_back_scroll()
+*** 367,372 ****
+  	if (back_scroll >= 0)
+  		return (back_scroll);
+  	if (top_scroll)
+! 		return (sc_height - 2);
+  	return (10000); /* infinity */
+  }
+--- 368,387 ----
+  	if (back_scroll >= 0)
+  		return (back_scroll);
+  	if (top_scroll)
+! 		return (sc_height - 3);
+  	return (10000); /* infinity */
++ }
++ 
++ /*
++  * Get the forwards scroll limit.
++  * Must call this function instead of just using the value of
++  * forw_scroll, because the default case depends on sc_height
++  * as well as forw_scroll.
++  */
++ 	public int
++ get_forw_scroll()
++ {
++ 	if (forw_scroll >= 0)
++ 		return (forw_scroll);
++ 	return (sc_height - 3);
+  }
+*** help.c	Sun Mar 10 12:03:22 1991
+--- ..\myles177\help.c	Thu Sep 12 21:25:54 1991
+***************
+*** 14,21 ****
+--- 14,23 ----
+  #include <dir.h>
+  #include <string.h>
+  #include <stdlib.h>
++ #ifndef TURBOC
+  extern int output_mode;
+  #endif
++ #endif
+  
+  extern char *progname;
+  
+*************** help()
+*** 36,45 ****
+--- 38,54 ----
+  		"it again:Press RETURN for more., or q when done ");
+  	cmd = (char *) ecalloc(strlen(helpfile) + strlen(progname) + 50,
+  				sizeof(char));
++ #ifdef TURBOC
++ 	if (directvideo)
++ 		sprintf(cmd, "-%s %s", progname, helpfile);
++ 	else
++ 		sprintf(cmd, "-%s -v %s", progname, helpfile);
++ #else
+  	if (output_mode == 0)
+  		sprintf(cmd, "-%s %s", progname, helpfile);
+  	else
+  		sprintf(cmd, "-%s -qVW4,4,76,23,Help %s", progname, helpfile);
++ #endif	/* TURBOC */
+  #else
+  	cmd = (char *) ecalloc(strlen(helpfile) + strlen(progname) + 150,
+  				sizeof(char));
+*************** help()
+*** 46,53 ****
+  	sprintf(cmd, 
+  	 "-%s -m -H -+E -+s '-PmHELP -- ?eEND -- Press g to see it again:Press RETURN for more., or q when done ' %s",
+  		progname, helpfile);
+- #endif
+  	free(helpfile);
+  	lsystem(cmd);
+  	error("End of help", NULL_PARG);
+  	free(cmd);
+--- 55,62 ----
+  	sprintf(cmd, 
+  	 "-%s -m -H -+E -+s '-PmHELP -- ?eEND -- Press g to see it again:Press RETURN for more., or q when done ' %s",
+  		progname, helpfile);
+  	free(helpfile);
++ #endif
+  	lsystem(cmd);
+  	error("End of help", NULL_PARG);
+  	free(cmd);
+*** input.c	Sun Mar 10 12:03:22 1991
+--- ..\myles177\input.c	Sat Jan 04 21:44:42 1992
+*************** back_line(curr_pos)
+*** 137,174 ****
+  		return (NULL_POSITION);
+  	}
+  
+- 	if (squeeze)
+- 	{
+- 		/*
+- 		 * Find out if the "current" line was blank.
+- 		 */
+- 		(void) ch_forw_get();	/* Skip the newline */
+- 		c = ch_forw_get();	/* First char of "current" line */
+- 		(void) ch_back_get();	/* Restore our position */
+- 		(void) ch_back_get();
+- 
+- 		if (c == '\n')
+- 		{
+- 			/*
+- 			 * The "current" line was blank.
+- 			 * Skip over any preceding blank lines,
+- 			 * since we skipped them in forw_line().
+- 			 */
+- 			while ((c = ch_back_get()) == '\n' || c == '\r')
+- 				if (sigs)
+- 				{
+- 					null_line();
+- 					return (NULL_POSITION);
+- 				}
+- 			if (c == EOI)
+- 			{
+- 				null_line();
+- 				return (NULL_POSITION);
+- 			}
+- 			(void) ch_forw_get();
+- 		}
+- 	}
+- 
+  	/*
+  	 * Scan backwards until we hit the beginning of the line.
+  	 */
+--- 137,142 ----
+*************** back_line(curr_pos)
+*** 198,203 ****
+--- 166,212 ----
+  			 */
+  			new_pos = ch_tell();
+  			break;
++ 		}
++ 	}
++ 
++ 	if (squeeze && c != EOI)
++ 	{
++ 		/*
++ 		 * Find out if the "new" line is blank.
++ 		 */
++ 		(void) ch_forw_get();   /* Skip the newline */
++ 		c = ch_forw_get();      /* First char of "new" line */
++ 
++ 		if (c == '\n' || c == '\r')
++ 		{
++ 			/*
++ 			 * The "new" line is blank.
++ 			 * Skip over any preceding blank lines,
++ 			 * since we skipped them in forw_line().
++ 			 */
++ 			while ((c = ch_back_get()) == '\n' || c == '\r')
++ 				if (sigs)
++ 				{
++ 					null_line();
++ 					return (NULL_POSITION);
++ 				}
++ 			if (c != EOI)
++ 			{
++ 				/*
++ 				 * We're near the end of a non-blank line.
++ 				 * Get to the beginning of the blank lines
++ 				 * that come after it.
++ 				 */
++ 				(void) ch_forw_get();
++ 				while (ch_forw_get() == '\r')
++ 					if (sigs)
++ 					{
++ 						null_line();
++ 						return (NULL_POSITION);
++ 					}
++ 			}
++ 			new_pos = ch_tell();
++ 
+  		}
+  	}
+  
+*** lesskey.c	Sat Jul 06 15:50:32 1991
+--- ..\myles177\lesskey.c	Thu Sep 12 21:33:28 1991
+*************** struct cmdname
+*** 107,113 ****
+  	NULL,			0
+  };
+  
+! main(argc, argv)
+  	int argc;
+  	char *argv[];
+  {
+--- 107,119 ----
+  	NULL,			0
+  };
+  
+! void usage()
+! {
+! 	fprintf(stderr, "usage: lesskey [-o output] [input]\n");
+! 	exit(1);
+! }
+! 
+! void main(argc, argv)
+  	int argc;
+  	char *argv[];
+  {
+*************** main(argc, argv)
+*** 286,295 ****
+  		p = getenv("HOME");
+  		if (p == NULL || *p == '\0')
+  		{
+- 			fprintf(stderr, "cannot find $HOME - using current directory\n");
+  #if __MSDOS__
+  			strcpy(line, "_less");
+  #else
+  			strcpy(line, ".less");
+  #endif
+  		} else
+--- 292,302 ----
+  		p = getenv("HOME");
+  		if (p == NULL || *p == '\0')
+  		{
+  #if __MSDOS__
++ 			fprintf(stderr, "No %HOME defined - using current directory\n");
+  			strcpy(line, "_less");
+  #else
++ 			fprintf(stderr, "cannot find $HOME - using current directory\n");
+  			strcpy(line, ".less");
+  #endif
+  		} else
+*************** main(argc, argv)
+*** 296,302 ****
+  		{
+  			strcpy(line, p);
+  #if __MSDOS__
+! 			strcat(line, "\\_less");
+  #else
+  			strcat(line, "/.less");
+  #endif
+--- 303,312 ----
+  		{
+  			strcpy(line, p);
+  #if __MSDOS__
+! 			if ((line[strlen(line)-1] != '/')
+! 			 && (line[strlen(line)-1] != '\\'))
+! 				strcat(line, "/");
+! 			strcat(line, "_less");
+  #else
+  			strcat(line, "/.less");
+  #endif
+*************** main(argc, argv)
+*** 305,312 ****
+  	}
+  	if ((out = fopen(outfile, "w")) == NULL)
+  		perror(outfile);
+! 	else
+  		fwrite((char *)usertable, 1, up-usertable, out);
+  	exit(0);
+  }
+  
+--- 315,324 ----
+  	}
+  	if ((out = fopen(outfile, "w")) == NULL)
+  		perror(outfile);
+! 	else {
+  		fwrite((char *)usertable, 1, up-usertable, out);
++ 		fprintf(stderr, "Key definitions written to %s\n", outfile);
++ 	}
+  	exit(0);
+  }
+  
+*************** tchar(pp)
+*** 351,360 ****
+  	}
+  	*pp = p+1;
+  	return (*p);
+- }
+- 
+- usage()
+- {
+- 	fprintf(stderr, "usage: lesskey [-o output] [input]\n");
+- 	exit(1);
+  }
+--- 363,366 ----
+*** line.c	Sat Jul 06 15:50:36 1991
+--- ..\myles177\line.c	Mon Sep 09 20:48:00 1991
+*************** plinenum(pos)
+*** 68,74 ****
+  	 */
+  	lno = find_linenum(pos);
+  
+! 	sprintf(&linebuf[curr], "%6d", lno);
+  	n = strlen(&linebuf[curr]);
+  	column += n;
+  	for (i = 0;  i < n;  i++)
+--- 68,74 ----
+  	 */
+  	lno = find_linenum(pos);
+  
+! 	sprintf(&linebuf[curr], "%6u", lno);
+  	n = strlen(&linebuf[curr]);
+  	column += n;
+  	for (i = 0;  i < n;  i++)
+*************** attr_swidth(a)
+*** 99,105 ****
+  	{
+  	case BOLD:	return (bo_s_width);
+  	case UNDERLINE:	return (ul_s_width);
+! 	case BLINK:	return (bl_s_width);
+  	}
+  	return (0);
+  }
+--- 99,105 ----
+  	{
+  	case BOLD:	return (bo_s_width);
+  	case UNDERLINE:	return (ul_s_width);
+! 	case BLINKING:	return (bl_s_width);
+  	}
+  	return (0);
+  }
+*************** attr_ewidth(a)
+*** 116,122 ****
+  	{
+  	case BOLD:	return (bo_e_width);
+  	case UNDERLINE:	return (ul_e_width);
+! 	case BLINK:	return (bl_e_width);
+  	}
+  	return (0);
+  }
+--- 116,122 ----
+  	{
+  	case BOLD:	return (bo_e_width);
+  	case UNDERLINE:	return (ul_e_width);
+! 	case BLINKING:	return (bl_e_width);
+  	}
+  	return (0);
+  }
+*************** do_append(c)
+*** 320,326 ****
+  		{
+  			STOREC(' ', NORMAL);
+  		} while ((column % tabstop) != 0);
+! 	} else if (control_char(c))
+  	{
+  	do_control_char:
+  		if (ctldisp == 0)
+--- 320,326 ----
+  		{
+  			STOREC(' ', NORMAL);
+  		} while ((column % tabstop) != 0);
+! 	} else if ((c != '\r') && control_char(c))
+  	{
+  	do_control_char:
+  		if (ctldisp == 0)
+*************** pdone(endline)
+*** 375,381 ****
+  	 * Add a newline if necessary,
+  	 * and append a '\0' to the end of the line.
+  	 */
+! 	if (column < sc_width || !auto_wrap || ignaw || ctldisp == 0)
+  	{
+  		linebuf[curr] = '\n';
+  		attr[curr] = NORMAL;
+--- 375,385 ----
+  	 * Add a newline if necessary,
+  	 * and append a '\0' to the end of the line.
+  	 */
+! 	if (column < sc_width || !auto_wrap || ignaw
+! #ifndef TURBOC
+! || ctldisp == 0
+! #endif
+! 	)
+  	{
+  		linebuf[curr] = '\n';
+  		attr[curr] = NORMAL;
+*** linenum.c	Sun Mar 10 12:03:24 1991
+--- ..\myles177\linenum.c	Thu Sep 12 22:08:34 1991
+*************** struct linenum
+*** 35,41 ****
+  	struct linenum *prev;		/* Line to previous in the list */
+  	POSITION pos;			/* File position */
+  	POSITION gap;			/* Gap between prev and next */
+! 	int line;			/* Line number */
+  };
+  /*
+   * "gap" needs some explanation: the gap of any particular line number
+--- 35,41 ----
+  	struct linenum *prev;		/* Line to previous in the list */
+  	POSITION pos;			/* File position */
+  	POSITION gap;			/* Gap between prev and next */
+! 	unsigned line;			/* Line number */
+  };
+  /*
+   * "gap" needs some explanation: the gap of any particular line number
+*************** struct linenum
+*** 48,54 ****
+  
+  #define	NPOOL	50			/* Size of line number pool */
+  
+! #define	LONGTIME	(2)		/* In seconds */
+  
+  public int lnloop = 0;			/* Are we in the line num loop? */
+  
+--- 48,54 ----
+  
+  #define	NPOOL	50			/* Size of line number pool */
+  
+! #define	LONGTIME	(1)		/* In seconds */
+  
+  public int lnloop = 0;			/* Are we in the line num loop? */
+  
+*************** add_lnum(lno, pos)
+*** 204,218 ****
+  longloopmessage()
+  {
+  	ierror("Calculating line numbers", NULL_PARG);
+- 	/*
+- 	 * Set the lnloop flag here, so if the user interrupts while
+- 	 * we are calculating line numbers, the signal handler will 
+- 	 * turn off line numbers (linenums=0).
+- 	 */
+- 	lnloop = 1;
+  }
+  
+! static int loopcount;
+  #if GET_TIME
+  static long startime;
+  #endif
+--- 204,212 ----
+  longloopmessage()
+  {
+  	ierror("Calculating line numbers", NULL_PARG);
+  }
+  
+! static long loopcount;
+  #if GET_TIME
+  static long startime;
+  #endif
+*************** static long startime;
+*** 220,225 ****
+--- 214,222 ----
+  	static void
+  longish()
+  {
++ #ifdef TURBOC
++ 	if (kbhit()) ;	/* permit control^c checking */
++ #endif
+  #if GET_TIME
+  	if (loopcount >= 0 && ++loopcount > 100)
+  	{
+*************** find_linenum(pos)
+*** 248,254 ****
+  	POSITION pos;
+  {
+  	register struct linenum *p;
+! 	register int lno;
+  	POSITION cpos;
+  
+  	if (!linenums)
+--- 245,251 ----
+  	POSITION pos;
+  {
+  	register struct linenum *p;
+! 	register unsigned lno;
+  	POSITION cpos;
+  
+  	if (!linenums)
+*************** find_linenum(pos)
+*** 300,305 ****
+--- 297,308 ----
+  		if (ch_seek(p->pos))
+  			return (0);
+  		loopcount = 0;
++ 		/*
++ 		 * Set the lnloop flag here, so if the user interrupts while
++ 		 * we are calculating line numbers, the signal handler will 
++ 		 * turn off line numbers (linenums=0).
++ 		 */
++ 		lnloop = 1;
+  		for (lno = p->line, cpos = p->pos;  cpos < pos;  lno++)
+  		{
+  			/*
+*************** find_linenum(pos)
+*** 329,334 ****
+--- 332,343 ----
+  		if (ch_seek(p->pos))
+  			return (0);
+  		loopcount = 0;
++ 		/*
++ 		 * Set the lnloop flag here, so if the user interrupts while
++ 		 * we are calculating line numbers, the signal handler will 
++ 		 * turn off line numbers (linenums=0).
++ 		 */
++ 		lnloop = 1;
+  		for (lno = p->line, cpos = p->pos;  cpos > pos;  lno--)
+  		{
+  			/*
+*************** find_linenum(pos)
+*** 355,361 ****
+   */
+  	public POSITION
+  find_pos(lno)
+! 	int lno;
+  {
+  	register struct linenum *p;
+  	POSITION cpos;
+--- 364,370 ----
+   */
+  	public POSITION
+  find_pos(lno)
+! 	unsigned lno;
+  {
+  	register struct linenum *p;
+  	POSITION cpos;
+*************** currline(where)
+*** 429,435 ****
+  {
+  	POSITION pos;
+  	POSITION len;
+! 	int lnum;
+  
+  	pos = position(where);
+  	len = ch_length();
+--- 438,444 ----
+  {
+  	POSITION pos;
+  	POSITION len;
+! 	unsigned lnum;
+  
+  	pos = position(where);
+  	len = ch_length();
+*** lsystem.c	Sat Jul 06 15:50:44 1991
+--- ..\myles177\lsystem.c	Wed Sep 11 20:44:24 1991
+***************
+*** 20,29 ****
+--- 20,42 ----
+  #include <stdlib.h>
+  #include <time.h>
+  #include <ctype.h>
++ #ifdef TURBOC
++ /*
++  * This is what could be used, but why bother at all?
++  * For some people, switchar fiddling breaks things..
++  *
++  * extern int getswitchar();
++  * extern void setswitchar();
++  * #define get_swchar()		((char) getswitchar())
++  * #define swchar_to_dos()		setswitchar('/')
++  * #define swchar_to_unix()	setswitchar('-')
++  */
++ #else
+  char get_swchar();
+  void swchar_to_dos();
+  void swchar_to_unix();
+  #endif
++ #endif
+  
+  extern char *getenv();
+  
+*************** lsystem(cmd)
+*** 40,47 ****
+--- 53,64 ----
+  	char *cmd;
+  {
+  	register int inp;
++ #if __MSDOS__
++ 	register int inp2;
++ #else
+  	register char *shell;
+  	register char *p;
++ #endif
+  	register char *curr_filename;
+  
+  	/*
+*************** lsystem(cmd)
+*** 84,91 ****
+  	 */
+  #if __MSDOS__
+  {
+- 	register int inp2;
+- 
+  	inp = dup(0);
+  	inp2 = open("CON", O_TEXT|O_RDONLY);
+  	dup2(0,inp2);
+--- 101,106 ----
+*************** lsystem(cmd)
+*** 106,120 ****
+--- 121,139 ----
+  #if __MSDOS__
+  {
+  	int result;
++ #ifndef TURBOC
+  	char sw_char;
+  
+  	sw_char = get_swchar();
+  	swchar_to_dos();
++ #endif /* TURBOC */
+  	result = system(cmd);
+  	if (result != 0)
+  		perror("less");
++ #ifndef TURBOC
+  	if (sw_char == '-')
+  		swchar_to_unix();
++ #endif /* TURBOC */
+  }
+  #else
+  	p = NULL;
+*** main.c	Sat Jul 06 15:50:48 1991
+--- ..\myles177\main.c	Thu Sep 19 00:09:30 1991
+*************** extern char *	tagpattern;
+*** 41,51 ****
+--- 41,66 ----
+  extern int	tagoption;
+  #endif
+  
++ #ifdef TURBOC
++ void check_for_desqview ()
++ {
++ 	asm {
++ 		mov	cx,'DE'		/* cx,dx = an invalid date */
++ 		mov	dx,'SQ'
++ 		mov	ax,2B01h	/* DOS "set date" function */
++ 		int	21h             /* Try to set invalid date */
++ 	}
++ 	if (_AL != 0xff)                /* DOS returns 0xff = function failed */
++ 		directvideo = 0;	/* DV active: use BIOS calls */
++ }
++ #include <stdio.h>
++ #endif	/* TURBOC */
+  
+  
+  /*
+   * Entry point.
+   */
++ void
+  main(argc, argv)
+  	int argc;
+  	char *argv[];
+*************** main(argc, argv)
+*** 63,68 ****
+--- 78,86 ----
+  	init_prompt();
+  	init_charset();
+  	init_option();
++ #ifdef TURBOC
++ 	check_for_desqview ();
++ #endif	/* TURBOC */
+  	scan_option(getenv("LESS"));
+  
+  #define	isoptstring(s)	(((s)[0] == '-' || (s)[0] == '+') && (s)[1] != '\0')
+*************** ecalloc(count, size)
+*** 212,223 ****
+  {
+  	register VOID_POINTER p;
+  
+! 	p = calloc(count, size);
+  	if (p != NULL)
+  		return (p);
+  	error("Cannot allocate memory", NULL_PARG);
+  	quit(1);
+! 	/*NOTREACHED*/
+  }
+  
+  /*
+--- 230,241 ----
+  {
+  	register VOID_POINTER p;
+  
+! 	p = (VOID_POINTER) calloc(count, size);
+  	if (p != NULL)
+  		return (p);
+  	error("Cannot allocate memory", NULL_PARG);
+  	quit(1);
+! 	return (NULL); /*NOTREACHED*/
+  }
+  
+  /*
+*************** quit(status)
+*** 262,267 ****
+--- 280,286 ----
+  	flush();
+  	raw_mode(0);
+  #if __MSDOS__
++ #ifndef TURBOC
+  	restore_screen();
+  	/* 
+  	 * If we don't close 2, we get some garbage from
+*************** quit(status)
+*** 270,275 ****
+--- 289,295 ----
+  	 * The same bug shows up if we use ^C^C to abort.
+  	 */
+  	close(2);
++ #endif
+  #endif
+  	exit(status);
+  }
+*** optfunc.c	Sat Jul 06 15:50:50 1991
+--- ..\myles177\optfunc.c	Thu Sep 12 21:47:44 1991
+*************** extern char *tags;
+*** 40,48 ****
+--- 40,50 ----
+  #endif
+  #if __MSDOS__
+  public char *window_box = NULL;
++ #ifndef TURBOC
+  extern int  directvideo;
+  extern int  output_mode;
+  #endif
++ #endif
+  
+  
+  #if LOGFILE
+*************** opt_v(type, s)
+*** 303,308 ****
+--- 305,311 ----
+  	int type;
+  	register char *s;
+  {
++ #ifndef TURBOC
+  	switch (type)
+  	{
+  	case INIT:
+*************** opt_v(type, s)
+*** 315,322 ****
+--- 318,327 ----
+  	case QUERY:
+  		break;
+  	}
++ #endif
+  }
+  
++ #ifndef TURBOC
+  /*
+   * Handler for -W option. (set/modify window boundaries)
+   */
+*************** opt_W(type, s)
+*** 347,352 ****
+--- 352,358 ----
+  	}
+  }
+  #endif
++ #endif	/* TURBOC */
+  
+  /*
+   * "-?" means display a help message.
+*** option.c	Sat Jul 06 15:50:54 1991
+--- ..\myles177\option.c	Tue Sep 10 16:14:24 1991
+*************** static int flip_triple();
+*** 20,25 ****
+--- 20,27 ----
+  extern int screen_trashed;
+  extern char *every_first_cmd;
+  
++ public struct option * findopt ();
++ 
+  /* 
+   * Scan an argument (either from the command line or from the 
+   * LESS environment variable) and process it.
+*************** scan_option(s)
+*** 107,113 ****
+--- 109,119 ----
+  		if (o == NULL)
+  		{
+  			parg.p_string = propt(c);
++ #ifdef	TURBOC
++ 			error("There is no %s flag (\"less -?\" for help)",
++ #else
+  			error("There is no %s flag (\"less -\\?\" for help)",
++ #endif	/* TURBOC */
+  				&parg);
+  			quit(1);
+  		}
+*** opttbl.c	Sun Mar 10 12:03:28 1991
+--- ..\myles177\opttbl.c	Thu Sep 12 21:46:10 1991
+*************** public int swindow;		/* Size of scrollin
+*** 34,40 ****
+--- 34,42 ----
+  public int jump_sline;		/* Screen line of "jump target" */
+  public int chopline;		/* Truncate displayed lines at screen width */
+  #if __MSDOS__
++ #ifndef TURBOC
+  public int output_mode;		/* Which screen output method */
++ #endif /* TURBOC */
+  public int refresh_on_quit;	/* Repaint screen on quit, if possible */
+  #endif
+  
+*************** static struct option option[] =
+*** 176,183 ****
+--- 178,189 ----
+  		"Print backspace as ^H"
+  	},
+  #if __MSDOS__
++ #ifdef TURBOC
++ 	{ 'v', BOOL, 1, &directvideo, opt_v,
++ #else
+  	{ 'v', TRIPLE|NO_TOGGLE, 0, &output_mode, opt_v,
+  		"Output is to standard output, using ansi screen control",
++ #endif
+  		"Output is to video BIOS",
+  		"Output is directly to memory mapped video"
+  	},
+*************** static struct option option[] =
+*** 187,192 ****
+--- 193,199 ----
+  		"Display ~ for lines after end-of-file",
+  		NULL
+  	},
++ #ifndef TURBOC
+  #if __MSDOS__
+  #if MOVE_WINDOW
+  #define	W_FLAGS	STRING
+*************** static struct option option[] =
+*** 198,203 ****
+--- 205,211 ----
+  	},
+  #undef W_FLAGS
+  #endif
++ #endif /* TURBOC */
+  	{ 'x', NUMBER|REPAINT, 8, &tabstop, NULL,
+  		"Tab stops: ",
+  		"Tab stops every %d spaces", 
+*** output.c	Sun Mar 10 12:03:32 1991
+--- ..\myles177\output.c	Fri Oct 04 21:24:58 1991
+*************** extern int so_s_width, so_e_width;
+*** 13,20 ****
+--- 13,22 ----
+  extern int screen_trashed;
+  extern int any_display;
+  #if __MSDOS__
++ #ifndef TURBOC
+  extern int output_mode;
+  #endif
++ #endif
+  
+  /*
+   * Display the line which is in the line buffer.
+*************** put_line()
+*** 51,63 ****
+  			{
+  			case UNDERLINE:	ul_exit();	break;
+  			case BOLD:	bo_exit();	break;
+! 			case BLINK:	bl_exit();	break;
+  			}
+  			switch (a)
+  			{
+  			case UNDERLINE:	ul_enter();	break;
+  			case BOLD:	bo_enter();	break;
+! 			case BLINK:	bl_enter();	break;
+  			}
+  			curr_attr = a;
+  		}
+--- 53,71 ----
+  			{
+  			case UNDERLINE:	ul_exit();	break;
+  			case BOLD:	bo_exit();	break;
+! 			case BLINKING:	bl_exit();	break;
+! #ifdef TURBOC
+! 			case BOLD2:	bo2_exit();	break;
+! #endif
+  			}
+  			switch (a)
+  			{
+  			case UNDERLINE:	ul_enter();	break;
+  			case BOLD:	bo_enter();	break;
+! 			case BLINKING:	bl_enter();	break;
+! #ifdef TURBOC
+! 			case BOLD2:	bo2_enter();	break;
+! #endif
+  			}
+  			curr_attr = a;
+  		}
+*************** static char *ob = obuf;
+*** 92,97 ****
+--- 101,114 ----
+  	public void
+  flush()
+  {
++ #ifdef TURBOC
++ 
++ 	*ob = '\0';
++ 	cputs(obuf);
++ 	ob = obuf;
++ 
++ #else
++ 
+  	register int n;
+  	register int fd;
+  
+*************** flush()
+*** 111,116 ****
+--- 128,135 ----
+  	if (write(fd, obuf, n) != n)
+  		screen_trashed = 1;
+  	ob = obuf;
++ 
++ #endif	/* TURBOC */
+  }
+  
+  /*
+*** prompt.c	Sun Mar 10 12:03:40 1991
+--- ..\myles177\prompt.c	Sun Sep 01 11:13:32 1991
+*************** ap_pos(pos)
+*** 82,88 ****
+  ap_int(n)
+  	int n;
+  {
+! 	sprintf(mp, "%d", n);
+  	setmp();
+  }
+  
+--- 82,88 ----
+  ap_int(n)
+  	int n;
+  {
+! 	sprintf(mp, "%u", n);
+  	setmp();
+  }
+  
+*************** protochar(c, where)
+*** 249,254 ****
+--- 249,256 ----
+  		else
+  			ap_quest();
+  		break;
++ 	default:	/* When in doubt, just add the char to the message */
++ 		*mp++ = c;
+  	}
+  }
+  
+*** screen.c	Sat Jul 06 15:50:58 1991
+--- ..\myles177\screen.c	Tue Nov 12 23:38:28 1991
+***************
+*** 6,11 ****
+--- 6,16 ----
+   */
+  
+  #include "less.h"
++ 
++ #ifdef TURBOC
++ extern struct text_info _video;
++ #else
++ 
+  #if XENIX
+  #include <sys/types.h>
+  #include <sys/ioctl.h>
+*************** static char
+*** 64,69 ****
+--- 69,76 ----
+  	*sc_init,		/* Startup terminal initialization */
+  	*sc_deinit;		/* Exit terminal de-initialization */
+  
++ #endif /* TURBOC */
++ 
+  static int init_done = 0;
+  
+  public int auto_wrap;		/* Terminal does \r\n when write past margin */
+*************** public int ul_s_width, ul_e_width;	/* Pr
+*** 75,80 ****
+--- 82,89 ----
+  public int so_s_width, so_e_width;	/* Printing width of standout seq */
+  public int bl_s_width, bl_e_width;	/* Printing width of blink seq */
+  
++ #ifndef TURBOC
++ 
+  static char *cheaper();
+  
+  /*
+*************** static char *cheaper();
+*** 85,94 ****
+  /*extern*/ short ospeed;	/* Terminal output baud rate */
+  /*extern*/ char PC;		/* Pad character */
+  
+  extern int quiet;		/* If VERY_QUIET, use visual bell for bell */
+  extern int know_dumb;		/* Don't complain about a dumb terminal */
+! extern int back_scroll;
+  extern int swindow;
+  extern char *tgetstr();
+  extern char *tgoto();
+  extern char *getenv();
+--- 94,108 ----
+  /*extern*/ short ospeed;	/* Terminal output baud rate */
+  /*extern*/ char PC;		/* Pad character */
+  
++ #endif /* TURBOC */
++ 
+  extern int quiet;		/* If VERY_QUIET, use visual bell for bell */
+  extern int know_dumb;		/* Don't complain about a dumb terminal */
+! extern int back_scroll, forw_scroll;
+  extern int swindow;
++ 
++ #ifndef TURBOC
++ 
+  extern char *tgetstr();
+  extern char *tgoto();
+  extern char *getenv();
+*************** get_term()
+*** 289,295 ****
+  	scrsize(&sc_height, &sc_width);
+  	pos_init();
+  	if (swindow < 0)
+! 		swindow = sc_height - 1;
+  
+  	auto_wrap = tgetflag("am");
+  	ignaw = tgetflag("xn");
+--- 303,309 ----
+  	scrsize(&sc_height, &sc_width);
+  	pos_init();
+  	if (swindow < 0)
+! 		swindow = sc_height - 2;
+  
+  	auto_wrap = tgetflag("am");
+  	ignaw = tgetflag("xn");
+*************** putbs()
+*** 702,704 ****
+--- 716,985 ----
+  {
+  	tputs(sc_backspace, 1, putchr);
+  }
++ 
++ #else  /* TURBOC under MSDOS: */
++ 
++ 	public void
++ raw_mode(on)
++ 	int on;
++ {
++ 	on = on;
++ }
++ 
++ /*
++  * Set terminal capabilities for TURBOC video output
++  */
++ 	public void
++ get_term()
++ {
++ 	extern int output_mode;
++ 	/*
++ 	 * Get size of the screen.
++ 	 */
++ 	sc_height = _video.screenheight;
++ 	sc_width  = _video.screenwidth;
++ 	if (sc_width != 80)
++ 		directvideo = 0;
++ 	pos_init();
++ 	if (swindow < 0)
++ 		swindow = sc_height - 2;
++ 	auto_wrap = 1;
++ 	ignaw = 0;
++ 	erase_char = '\b';
++ 	kill_char = '\003';
++ 
++ 	so_e_width = so_s_width = 0;
++ 	bo_s_width = bo_e_width = 0;
++ 	ul_s_width = ul_e_width = 0;
++ 	bl_s_width = bl_e_width = 0;
++ }
++ 
++ /*
++  * Below are the functions which perform all the 
++  * terminal-specific screen manipulation.
++  */
++ 
++ 
++ /*
++  * Initialize terminal
++  */
++ 	public void
++ init()
++ {
++ 	flush();
++ 	if (init_done)
++ 		return;
++ 	textbackground(BLACK);
++ 	textcolor(LIGHTGRAY);
++ 	init_done = 1;
++ }
++ 
++ /*
++  * Deinitialize terminal
++  */
++ 	public void
++ deinit()
++ {
++ 	flush();
++ 	if (!init_done)
++ 		return;
++ 	init_done = 0;
++ }
++ 
++ /*
++  * Home cursor (move to upper left corner of screen).
++  */
++ 	public void
++ home()
++ {
++ 	flush();
++ 	gotoxy(1,1);
++ }
++ 
++ /*
++  * Add a blank line (called with cursor at home).
++  * Should scroll the display down.
++  */
++ 	public void
++ add_line()
++ {
++ 	flush();
++ 	insline();
++ }
++ 
++ /*
++  * Move cursor to lower left corner of screen.
++  */
++ 	public void
++ lower_left()
++ {
++ 	flush();
++ 	gotoxy(1,sc_height);
++ }
++ 
++ /*
++  * Ring the terminal bell.
++  */
++ 	public void
++ bell()
++ {
++ 	flush();
++ 	if (quiet == VERY_QUIET)
++ 		vbell();
++ 	else
++ 		putch('\7');
++ }
++ 
++ /*
++  * Output the "visual bell", if there is one.
++  */
++ 	public void
++ vbell()
++ {
++ }
++ 
++ /*
++  * Clear the screen.
++  */
++ 	public void
++ clear()
++ {
++ 	flush();
++ 	clrscr();
++ }
++ 
++ /*
++  * Clear from the cursor to the end of the cursor's line.
++  * {{ This must not move the cursor. }}
++  */
++ 	public void
++ clear_eol()
++ {
++ 	flush();
++ 	clreol();
++ }
++ 
++ /*
++  * Begin "standout" (bold, underline, or whatever).
++  */
++ 	public void
++ so_enter()
++ {
++ 	flush();
++ 	textcolor(RED);
++ }
++ 
++ /*
++  * End "standout".
++  */
++ 	public void
++ so_exit()
++ {
++ 	flush();
++ 	textcolor(LIGHTGRAY);
++ }
++ 
++ /*
++  * Begin "underline" (hopefully real underlining, 
++  * otherwise whatever the terminal provides).
++  */
++ 	public void
++ ul_enter()
++ {
++ 	flush();
++ 	textcolor(YELLOW);
++ }
++ 
++ /*
++  * End "underline".
++  */
++ 	public void
++ ul_exit()
++ {
++ 	flush();
++ 	textcolor(LIGHTGRAY);
++ }
++ 
++ /*
++  * Begin "bold"
++  */
++ 	public void
++ bo_enter()
++ {
++ 	flush();
++ 	textcolor(GREEN);
++ }
++ 
++ /*
++  * End "bold".
++  */
++ 	public void
++ bo_exit()
++ {
++ 	flush();
++ 	textcolor(LIGHTGRAY);
++ }
++ 
++ /*
++  * Begin "blink"
++  */
++ 	public void
++ bl_enter()
++ {
++ 	flush();
++ 	textcolor(_video.attribute|BLINK);
++ }
++ 
++ /*
++  * End "blink".
++  */
++ 	public void
++ bl_exit()
++ {
++ 	flush();
++ 	textcolor(_video.attribute&127);
++ }
++ 
++ /*
++  * Begin "bold2"
++  */
++ 	public void
++ bo2_enter()
++ {
++ 	flush();
++ 	textcolor(LIGHTBLUE);
++ }
++ 
++ /*
++  * End "bold2".
++  */
++ 	public void
++ bo2_exit()
++ {
++ 	flush();
++ 	textcolor(LIGHTGRAY);
++ }
++ 
++ /*
++  * Erase the character to the left of the cursor 
++  * and move the cursor left.
++  */
++ 	public void
++ backspace()
++ {
++ 	/* 
++ 	 * Try to erase the previous character by overstriking with a space.
++ 	 */
++ 	putstr("\b \b");
++ }
++ 
++ /*
++  * Output a plain backspace, without erasing the previous char.
++  */
++ 	public void
++ putbs()
++ {
++ 	putchr('\b');
++ }
++ 
++ #endif
+*** search.c	Sat Jul 06 15:51:02 1991
+--- ..\myles177\search.c	Thu Nov 14 12:23:10 1991
+*************** search(search_type, pattern, n)
+*** 213,218 ****
+--- 213,221 ----
+  	oldpos = pos;
+  	for (;;)
+  	{
++ #ifdef TURBOC
++ 		if (kbhit()) ;	/* permit ^C check */
++ #endif
+  		/*
+  		 * Get lines until we find a matching one or 
+  		 * until we hit end-of-file (or beginning-of-file 
+*** signal.c	Sun Mar 10 12:03:40 1991
+--- ..\myles177\signal.c	Tue Sep 10 19:38:00 1991
+*************** psignals()
+*** 210,215 ****
+--- 210,218 ----
+  		 * {{ You may wish to replace the bell() with 
+  		 *    error("Interrupt", NULL_PARG); }}
+  		 */
++ #ifdef TURBOC
++ 		screen_trashed = 1;
++ #endif
+  
+  		/*
+  		 * If we were interrupted while in the "calculating 
+*************** psignals()
+*** 218,225 ****
+--- 221,230 ----
+  		if (lnloop)
+  		{
+  			lnloop = 0;
++ #ifndef TURBOC
+  			if (linenums == 2)
+  				screen_trashed = 1;
++ #endif
+  			linenums = 0;
+  			error("Line numbers turned off", NULL_PARG);
+  		}
+*** ttyin.c	Sat Jul 06 15:51:06 1991
+--- ..\myles177\ttyin.c	Wed Sep 11 19:16:48 1991
+***************
+*** 3,8 ****
+--- 3,13 ----
+   */
+  
+  #include "less.h"
++ 
++ extern int kill_char;
++ 
++ #ifndef TURBOC
++ 
+  #if __MSDOS__
+  #include <io.h>
+  #include <stdio.h>
+*************** getchr()
+*** 63,69 ****
+  		/*
+  		 * In raw read, we don't see ^C so look here for it.
+  		 */
+! 		if (c == '\003')
+  			raise(SIGINT);
+  #endif
+  		/*
+--- 68,74 ----
+  		/*
+  		 * In raw read, we don't see ^C so look here for it.
+  		 */
+! 		if (c == kill_char)
+  			raise(SIGINT);
+  #endif
+  		/*
+*************** getchr()
+*** 77,79 ****
+--- 82,132 ----
+  
+  	return (c);
+  }
++ #else /* TURBOC */
++ 
++ #include <dos.h>
++ #include <signal.h>
++ 
++ /*
++  * Open keyboard for input.
++  */
++ 	public void
++ open_getchr()
++ {
++ }
++ 
++ /*
++  * Get a character directly from the PC BIOS.
++  */
++ 	public int
++ getchr()
++ {
++ 	int c;
++  	static int extrac = 0;
++  
++  	if (extrac) {
++  		c = extrac;
++  		extrac = 0;
++  		return c;
++  	}
++  	flush ();
++  	do {
++  		asm {
++  			mov	ah,0	/* call:  BIOS read char into ax */
++  			int	16h
++  		}
++ 		c = _AX;
++ 		if (c == 0) {
++ 			raise (SIGINT);
++ 			c = kill_char;
++ 		} else {
++ 			extrac = c >> 8;
++ 			if (c &= 0xff)
++ 				extrac = 0;
++ 			else
++ 				c = '\200';
++ 		}
++  	} while (c == 0);
++ 	return c;
++ }
++ #endif	/* TURBOC */
+*** version.c	Sat Jul 06 15:51:10 1991
+--- ..\myles177\version.c	Sat Jan 04 23:49:20 1992
+***************
+*** 310,315 ****
+   *	v177: Add LESSHELP variable.			4/2/91    mark
+   *	      Fix bug with F command with -e.
+   *	      Try /dev/tty for input before using fd 2.
+   */
+  
+! char version[] = "@(#) less  version 177";
+--- 310,321 ----
+   *	v177: Add LESSHELP variable.			4/2/91    mark
+   *	      Fix bug with F command with -e.
+   *	      Try /dev/tty for input before using fd 2.
++  *	      Executable posted to comp.binaries.ibm.pc	Aug/91    M.Lord
++  *	v177+ Fixed many bugs in original port.		9/1/91    M.Lord
++  *	v177++ Added all optional features, new fixes	Oct/91    M.Lord
++  *	v177D Added missing ifdefs for unix compilation Nov/91    M.Lord
++  *	v177E Fix for buggy -s option;                  Jan/92    KiYun Roe
++  *	      less +G  fixed                            Jan/92    M.Lord
+   */
+  
+! char version[] = "@(#) less  version 177E";
+*** less.hlp	Sat Jul 06 15:50:20 1991
+--- ..\myles177\less.hlp	Thu Sep 12 22:09:52 1991
+***************
+*** 1,11 ****
+  
+!                      SUMMARY OF COMMANDS
+  
+        Commands marked with * may be preceded by a number, N.
+        Notes in parentheses indicate the behavior if N is given.
+  
+    h  H                 Display this help.
+!   q  :q  :Q  ZZ        Exit.
+  
+    e  ^E  j  ^N  CR  *  Forward  one line (or N lines).
+    y  ^Y  k  ^K  ^P  *  Backward one line (or N lines).
+--- 1,11 ----
+  
+! LESS V177            SUMMARY OF COMMANDS
+  
+        Commands marked with * may be preceded by a number, N.
+        Notes in parentheses indicate the behavior if N is given.
+  
+    h  H                 Display this help.
+!   q  Q  :q  :Q  ZZ     Exit.
+  
+    e  ^E  j  ^N  CR  *  Forward  one line (or N lines).
+    y  ^Y  k  ^K  ^P  *  Backward one line (or N lines).
+***************
+*** 15,21 ****
+    w                 *  Backward one window (and set window to N).
+    d  ^D             *  Forward  one half-window (and set half-window to N).
+    u  ^U             *  Backward one half-window (and set half-window to N).
+!   F                    Forward forever; like "tail -f".
+    r  ^R  ^L            Repaint screen.
+    R                    Repaint screen, discarding buffered input.
+  
+--- 15,21 ----
+    w                 *  Backward one window (and set window to N).
+    d  ^D             *  Forward  one half-window (and set half-window to N).
+    u  ^U             *  Backward one half-window (and set half-window to N).
+!   F                    Forward forever; like "tail -f" (except on MSDOS).
+    r  ^R  ^L            Repaint screen.
+    R                    Repaint screen, discarding buffered input.
+  
+***************
+*** 52,60 ****
+    ^X^X                 Same as '.
+  
+    E [file]             Examine a new file.
+!   :e  ^X^V             Same as E.
+!   :n                *  Examine the (N-th) next file from the command line.
+!   :p                *  Examine the (N-th) previous file from the command line.
+    =  ^G  :f            Print current file name.
+    V                    Print version number of "less".
+  
+--- 52,60 ----
+    ^X^X                 Same as '.
+  
+    E [file]             Examine a new file.
+!   :e  ALT-e  ^X^V      Same as E.
+!   :n  ALT-n         *  Examine the (N-th) next file from the command line.
+!   :p  ALT-p         *  Examine the (N-th) previous file from the command line.
+    =  ^G  :f            Print current file name.
+    V                    Print version number of "less".
+  
+***************
+*** 97,102 ****
+--- 97,103 ----
+    -t [tag]      Find a tag.
+    -T [tagsfile] Use an alternate tags file.
+    -u  -U        Change handling of backspaces.
++   -v            Use video BIOS instead of direct screen writes (MSDOS only).
+    -w            Display ~ for lines after end-of-file.
+    -x [N]        Set tab stops.
+    -y [N]        Forward scroll limit.

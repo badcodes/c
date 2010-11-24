@@ -1,0 +1,156 @@
+PROJECT = ticker
+APPNAME := $(PROJECT)
+TYPE = dos
+OUTPUT = exe
+SRCDIR = ..\src
+DSTDIR = ..\bin\$(TYPE)
+DISTFILES = makefile
+DISTDIR = ..
+SRCS = $(foreach fn,$(wildcard $(SRCDIR)/*.c),$(notdir $(fn)))
+TSRCS = 
+LIBS = 
+
+SRCE=.c
+OBJE=.obj
+LIBE=.lib
+EXEE=.exe
+#APPE=.com
+
+OBJS := $(SRCS:$(SRCE)=$(OBJE))
+PROJECT := $(DSTDIR)\$(PROJECT)
+SOURCES := $(addprefix $(DSTDIR)\,$(SRCS))
+OBJECTS := $(addprefix $(DSTDIR)\,$(OBJS))
+OBJLIST_FILE := $(PROJECT).cmd
+FILES := $(PROJECT)$(EXEE)
+
+ifeq ($(TYPE),dos)
+  FILES += $(PROJECT).com
+endif
+
+ifdef INCLUDEDIR
+  INCDIRS := $(INCLUDEDIR);$(INCLUDEDIR)\$(TYPE)
+else
+  INCDIRS := $(INCLUDEDIR)
+endif
+
+ifdef LIBDIR
+  LIBDIRS := $(LIBDIR);$(LIBDIR)\$(TYPE)
+else
+  LIBDIRS := $(LIBDIR)
+endif
+
+#$(warning -I $(INCDIRS) -L $(LIBDIRS))
+
+ifeq ($(OUTPUT),lib) 
+  FILES := $(PROJECT)$(LIBE)
+endif
+
+
+CC = wcc
+LINK = wlink
+LIBER = wlib
+LIBFLAGS = -b -c -n -pa
+CFLAGS = -w4 -e25 -zq
+SMALL_FLAGS = -osxa -zm
+FAST_FLAGS = -ot -oi -oe -ol+ -on -or
+DEBUG_FLAGS = -d2 -od -db -dDEBUG=1 
+RELEASE_FLAGS = -ol -oh -dNDEBUG=1 $(FAST_FLAGS)
+DOS_FLAGS = -bt=dos -ms
+NT_FLAGS = -bt=nt -6r -mf
+COM_FLAGS = LIBF cstart_t
+ifeq ($(TYPE),dos)
+  LSYS = SYS DOS
+  LOP = maxe=25,q,symf
+  CFLAGS += $(DOS_FLAGS)
+else ifeq ($(TYPE),nt)
+  CC = wcc386
+  LSYS = SYS NT 
+  CFLAGS += $(NT_FLAGS)
+endif
+
+ifdef LOP
+LFLAGS += OP $(LOP)
+endif
+ifdef LLIBF
+LFLAGS += LIBF $(LLIBF)
+endif
+ifdef LIBDIRS
+LFLAGS += LIBPATH $(LIBDIRS)
+endif
+ifdef LIBS
+LFLAGS += LIBF $(LIBS)
+endif
+ifdef INCDIRS
+CFLAGS += -I$(INCDIRS)
+endif
+
+vpath %$(SRCE) $(SRCDIR)
+vpath %$(OBJE) $(DSTDIR)
+vpath %.h $(SRCDIR)
+
+ifndef PROJECT
+$(error "\"Project\" must be defined!!!")
+endif
+
+DISTFILES += $(FILES)
+
+.PHONY: $(PROJECT)
+$(PROJECT) : debug
+
+
+release : CFLAGS += $(RELEASE_FLAGS) 
+release : $(FILES)
+
+debug : CFLAGS += $(DEBUG_FLAGS) 
+debug : $(FILES)
+
+
+$(PROJECT).exe : chk_dst_dir $(OBJS) obj_list
+	$(LINK) $(LSYS) $(LFLAGS) OP MAP=$@.map NAME $@ @$(OBJLIST_FILE)
+
+$(PROJECT).com : chk_dst_dir $(OBJS) obj_list
+	$(LINK) $(LSYS) COM $(COM_FLAGS) $(LFLAGS) OP MAP=$@.map NAME $@ @$(OBJLIST_FILE)
+
+$(PROJECT)$(LIBE) : chk_dst_dir $(OBJS) append_lib_cmd
+	$(LIBER) $(LIBFLAGS) -l=$(PROJECT) $@ @$(OBJLIST_FILE)
+
+.PHONY: chk_dst_dir
+chk_dst_dir:
+	@-mkdir $(DSTDIR)
+
+.PHONY: obj_list
+obj_list:
+	@echo creating objects list file "$(OBJLIST_FILE)"
+	@echo $(foreach fn,$(OBJECTS),FIL $(fn)#CR#LF#) | sed -e "s/#CR#LF#\s*/\n/g"> $(OBJLIST_FILE)
+	@-cat $(OBJLIST_FILE)
+
+.PHONY: append_lib_cmd
+append_lib_cmd: 
+	@+rm -f $(OBJLIST_FILE)
+	@echo creating objects list file "$(OBJLIST_FILE)"
+	@echo $(foreach fn,$(OBJECTS),+'$(fn)')>>$(OBJLIST_FILE)
+	@-cat $(OBJLIST_FILE)
+
+%$(OBJE) : %$(SRCE) 
+	$(CC) $(CFLAGS) $(CPPFLAGS) -fo=$(DSTDIR)\$@ $(SRCDIR)\$(^F)
+
+.PHONY: test
+test: $(DSTDIR)\test.exe
+$(DSTDIR)\test.exe : $(TSRCS:$(SRCE)=$(OBJE))  $(PROJECT)$(LIBE)
+	$(LINK) $(LSYS) $(LFLAGS) NAME $@ LIBF $(PROJECT)$(LIBE) $<
+		
+
+.PHONY: clean
+clean:
+	-$(RM) -v $(foreach w,*.cmd *.map *.lib *.mbr *.obj *.exe *.com,$(wildcard $(DSTDIR)/$(w)))
+
+
+.PHONY: list
+list:
+	ls -l $(DSTDIR)
+
+.PHONY: distzip
+distzip: $(DISTFILES)
+	-rm -f $(DISTDIR)\$(APPNAME)_$(TYPE).zip
+	zip -9 $(DISTDIR)\$(APPNAME)_$(TYPE).zip $^
+

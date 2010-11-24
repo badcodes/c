@@ -1,0 +1,120 @@
+LESS V177E	-- Ported to MSDOS/BORLANDC by Mark Lord -- Nov/91
+
+/*
+ *		less
+ *	Copyright (c) 1984,1985,1989  Mark Nudelman
+ *
+ *	This program may be freely used and/or modified, 
+ *	with the following provisions:
+ *	1. This notice and the above copyright notice must remain intact.
+ *	2. Neither this program, nor any modification of it,
+ *	   may be sold for profit without written consent of the author.
+ *
+ *	This program is a paginator similar to "more", 
+ *	but allows you to move both forward and backward in the file.  
+ *	Commands are based on "more" and "vi".
+ */
+
+This is a direct port of LESS version 177 to Borland C for the IBM-PC family.
+
+A slightly buggy version of this was posted to comp.binaries.ibm.pc (USENET)
+in August/1991.  Fixes made since that release include:
+
+	1) 'F'  command now works.  Note that SHARE.EXE should also be loaded.
+	2) 'Q'  command added, same as 'q'.
+	3) '-z' option now works.
+	4) default scroll window size is now (screensize - 2).
+	5) lines are no longer "lost" when '-r' is used.
+	6) ALT-e, ALT-n, and ALT-p now do same functions as ':e', ':n' and ':p'.
+	7) output is now buffered, as per original version.
+	8) handling of messy 'Calculating line numbers'.. has been fixed up.
+	9) '-v' now supported to select BIOS output over direct screen writes.
+
+At this point, MLESS177.ZIP was first uploaded to Simtel20.  With much poking
+and prodding by users (especially M D Lawler), the changes have continued:
+
+	10) optional '|' command (pipe) now supported.
+	11) optional '-o/-O' logfiles now supported.
+	12) lesskey files now supported for remapping command key sequences.
+	13) carriage returns (^M) now NEVER displayed.
+	14) help message now says '-?' instead of '-\?'.
+	15) the version number ('V' command) is now '177++' to avoid confusion.
+	16) the handling of NULL patterns has been fixed in regex.c.
+	17) lesskey.exe and lesskey.man also included in package.
+	18) ALT-x and ALT-q now quit from less.
+	19) filename wildcard GLOBbing is now supported for the :e function.
+	20) setargv.c (by Michael M Rubenstein) is used instead of wildargs.obj
+		for expanding wildcards.. allows quotes and forward slashes.
+	21) the help screen now uses same video output mode as original file.
+	22) a makefile (less.mak) is now included for less/lesskey with bcc.
+	23) the -h and -y options now default to two less than the screensize,
+	    to complement the default for -z, unless -z is explicitly set.
+	24) control characters now display in LIGHTBLUE by default.
+	25) default LESSCHARSET is now "ibmpc" instead of "ascii".  This allows
+	    access to almost the entire OEM character set, unlike "latin1".
+	26) bugs in original edit.c fixed up -- better handling of :e command
+		and binary files are never entered into edit list.
+	27) scrolling now works consistantly with and without -c/-C options.
+	28) bug fixed in setargv.c:  less +G now works again.  Note that even
+	    in "stock" less, the following is broken:  less +f filename  
+	29) buggy -s (in original, too!) now fixed, courtesy KiYun Roe.
+
+Thanks to a lot of help from Michael D Lawler, this version now supports 101%
+of the full/optional functionality of the standard unix version of less.
+
+This package includes *full* source code for LESS V177, including all changes
+made for the TURBOC port to MSDOS.  The diffs from "standard LESS V177" are
+also included separately in diffs.177 for those who wish to restore the 
+original source code.  Several extra files specific to the MSDOS port are also
+included.  I used BORLAND C++ to build the .EXE's, and LZEXE to compress them.
+
+The original source by Mark Nudelman remains mostly intact, and functionality
+is very close to that described in the enclosed .man and .hlp files.
+
+The biggest difference from the original is that the MSDOS port defaults to
+a scroll window size which maintains one line in common with the previous 
+screen when paging forward/backward in the file.  "Standard" LESS does not.
+
+The incredible GNU regex.[ch] routines are used to provide regular expression
+matching in string searches, and the popen/pclose routines are courtesy of
+Diomidis Spinellis, with minor modifications for Borland C.  Also used is a 
+version of setargv.c by Michael M Rubenstein to handle wildcards on the command
+line.  A greatly hacked wildcard.c (originally by Guntram Blohm) performs
+wildcard expansion for the ":e" command.
+
+Modifications include changes to support the LESSHELP environment variable
+under MSDOS (originally only available in UNIX version), and all of the original
+screen I/O (Microsoft C ?) has been replaced with simple direct calls to the
+Borland C video library (conio.h).  Many problems have been encountered with
+text files with incorrect "lengths"; ie. those in which a control^Z character
+is used to identify the end-of-file before the physical end-of-file.  These
+problems seem to be mostly cured, but, if LESS behaves strangely on the last 
+screenful of a file, then this is likely the culprit.
+
+This port of LESS is also "somewhat" Desqview aware, in that it uses the BIOS
+for all video output when Desqview is active.  This permits use in text windows
+without the need to "virtualize" text.  Outside of Desqview, whenever a display
+size of 80 columns is in use, scrolling is made slightly faster by writing
+directly to the video buffer.
+
+Most common screen sizes are supported automatically by LESS.  This version
+has been tested with VGA sizes 25x80, 43x80, 50x80, and 25x132.  The Borland
+library routines seem to choke on video modes involving more than 50 lines.
+
+When lesskey.exe is used to create alternate command-key sequences for less,
+it creates a file named "_less" in the directory referenced by the HOME 
+environment variable, or in the root directory of the current drive if HOME
+is not set.  The less program looks for _less beginning in these two places,
+and then scans the entire search path if it is not found there.
+
+My favorite LESS environment variable setting under MS-DOS is currently:
+
+	set LESS=-icqsM
+
+Things work well for me in that mode, so it may be a good starting point to try.
+
+Bug reports are welcome, but don't expect me to email new executables on a whim.
+
+Enjoy,
+
+Mark Lord	MLORD@BNR.CA

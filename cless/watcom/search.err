@@ -1,0 +1,4 @@
+..\src\less.h(121): Warning! W138: No newline at end of file
+..\src\search.c(159): Warning! W131: No prototype found for function 'strcpy'
+..\src\search.c(268): Warning! W131: No prototype found for function 'abs'
+..\src\search.c(312): Warning! W131: No prototype found for function 'match'

@@ -1,0 +1,229 @@
+_cmd_count.....................................................\bin\dos\cmd.obj
+_cmd_pool......................................................\bin\dos\cmd.obj
+_exit_DESC....................................................\bin\dos\exit.obj
+_exit_NAME....................................................\bin\dos\exit.obj
+_exit_OPTION..................................................\bin\dos\exit.obj
+_exit_PROCESS.................................................\bin\dos\exit.obj
+_exit_USAGE...................................................\bin\dos\exit.obj
+_exit_VER.....................................................\bin\dos\exit.obj
+_filecmd_DESC..............................................\bin\dos\filecmd.obj
+_filecmd_NAME..............................................\bin\dos\filecmd.obj
+_filecmd_OPTION............................................\bin\dos\filecmd.obj
+_filecmd_PROCESS...........................................\bin\dos\filecmd.obj
+_filecmd_USAGE.............................................\bin\dos\filecmd.obj
+_filecmd_VER...............................................\bin\dos\filecmd.obj
+_help_DESC....................................................\bin\dos\help.obj
+_help_NAME....................................................\bin\dos\help.obj
+_help_OPTION..................................................\bin\dos\help.obj
+_help_PROCESS.................................................\bin\dos\help.obj
+_help_USAGE...................................................\bin\dos\help.obj
+_help_VER.....................................................\bin\dos\help.obj
+_modpath_DESC..............................................\bin\dos\modpath.obj
+_modpath_NAME..............................................\bin\dos\modpath.obj
+_modpath_OPTION............................................\bin\dos\modpath.obj
+_modpath_PROCESS...........................................\bin\dos\modpath.obj
+_modpath_USAGE.............................................\bin\dos\modpath.obj
+_modpath_VER...............................................\bin\dos\modpath.obj
+_printf_DESC................................................\bin\dos\printf.obj
+_printf_NAME................................................\bin\dos\printf.obj
+_printf_OPTION..............................................\bin\dos\printf.obj
+_printf_PROCESS.............................................\bin\dos\printf.obj
+_printf_USAGE...............................................\bin\dos\printf.obj
+_printf_VER.................................................\bin\dos\printf.obj
+_run_DESC......................................................\bin\dos\run.obj
+_run_NAME......................................................\bin\dos\run.obj
+_run_OPTION....................................................\bin\dos\run.obj
+_run_PROCESS...................................................\bin\dos\run.obj
+_run_USAGE.....................................................\bin\dos\run.obj
+_run_VER.......................................................\bin\dos\run.obj
+_script_DESC................................................\bin\dos\script.obj
+_script_NAME................................................\bin\dos\script.obj
+_script_OPTION..............................................\bin\dos\script.obj
+_script_PROCESS.............................................\bin\dos\script.obj
+_script_USAGE...............................................\bin\dos\script.obj
+_script_VER.................................................\bin\dos\script.obj
+_xecho_DESC...................................................\bin\dos\echo.obj
+_xecho_NAME...................................................\bin\dos\echo.obj
+_xecho_OPTION.................................................\bin\dos\echo.obj
+_xecho_PROCESS................................................\bin\dos\echo.obj
+_xecho_USAGE..................................................\bin\dos\echo.obj
+_xecho_VER....................................................\bin\dos\echo.obj
+_zcd_DESC.......................................................\bin\dos\cd.obj
+_zcd_NAME.......................................................\bin\dos\cd.obj
+_zcd_OPTION.....................................................\bin\dos\cd.obj
+_zcd_PROCESS....................................................\bin\dos\cd.obj
+_zcd_USAGE......................................................\bin\dos\cd.obj
+_zcd_VER........................................................\bin\dos\cd.obj
+argv_free_...................................................\bin\dos\utils.obj
+break_cmdline_...............................................\bin\dos\utils.obj
+cmd_exec_......................................................\bin\dos\cmd.obj
+cmd_idx_.......................................................\bin\dos\cmd.obj
+cmd_info_......................................................\bin\dos\cmd.obj
+cmd_init_......................................................\bin\dos\cmd.obj
+cmd_list_......................................................\bin\dos\cmd.obj
+cmd_register_..................................................\bin\dos\cmd.obj
+display_help_.................................................\bin\dos\help.obj
+display_help_ex_..............................................\bin\dos\help.obj
+fgetline_....................................................\bin\dos\utils.obj
+free_argv_...................................................\bin\dos\utils.obj
+list_break_word_.............................................\bin\dos\utils.obj
+list_free_...................................................\bin\dos\utils.obj
+list_free_all_...............................................\bin\dos\utils.obj
+list_to_argv_................................................\bin\dos\utils.obj
+main_.........................................................\bin\dos\zcmd.obj
+main_exit_....................................................\bin\dos\exit.obj
+main_filecmd_..............................................\bin\dos\filecmd.obj
+main_help_....................................................\bin\dos\help.obj
+main_modpath_..............................................\bin\dos\modpath.obj
+main_printf_................................................\bin\dos\printf.obj
+main_run_......................................................\bin\dos\run.obj
+main_script_................................................\bin\dos\script.obj
+main_xecho_...................................................\bin\dos\echo.obj
+main_zcd_.......................................................\bin\dos\cd.obj
+print_info_...................................................\bin\dos\help.obj
+printarg_....................................................\bin\dos\utils.obj
+process_line_..............................................\bin\dos\filecmd.obj
+quote_.......................................................\bin\dos\utils.obj
+quote_onneed_.................................................\bin\dos\zcmd.obj
+register_exit_................................................\bin\dos\exit.obj
+register_filecmd_..........................................\bin\dos\filecmd.obj
+register_help_................................................\bin\dos\help.obj
+register_modpath_..........................................\bin\dos\modpath.obj
+register_printf_............................................\bin\dos\printf.obj
+register_run_..................................................\bin\dos\run.obj
+register_script_............................................\bin\dos\script.obj
+register_xecho_...............................................\bin\dos\echo.obj
+register_zcd_...................................................\bin\dos\cd.obj
+unescape_....................................................\bin\dos\utils.obj
+unescape_argv_...............................................\bin\dos\utils.obj
+unquote_.....................................................\bin\dos\utils.obj
+zcmd_process_.................................................\bin\dos\zcmd.obj
+zcmd_process_line_............................................\bin\dos\zcmd.obj
+zcmd_shell_...................................................\bin\dos\zcmd.obj
+ 
+..\bin\dos\zcmd.obj     Offset=00000000H
+    main_
+    quote_onneed_
+    zcmd_process_
+    zcmd_process_line_
+    zcmd_shell_
+ 
+..\bin\dos\utils.obj    Offset=00000000H
+    argv_free_
+    break_cmdline_
+    fgetline_
+    free_argv_
+    list_break_word_
+    list_free_
+    list_free_all_
+    list_to_argv_
+    printarg_
+    quote_
+    unescape_
+    unescape_argv_
+    unquote_
+ 
+..\bin\dos\script.obj   Offset=00000000H
+    _script_DESC
+    _script_NAME
+    _script_OPTION
+    _script_PROCESS
+    _script_USAGE
+    _script_VER
+    main_script_
+    register_script_
+ 
+..\bin\dos\run.obj      Offset=00000000H
+    _run_DESC
+    _run_NAME
+    _run_OPTION
+    _run_PROCESS
+    _run_USAGE
+    _run_VER
+    main_run_
+    register_run_
+ 
+..\bin\dos\printf.obj   Offset=00000000H
+    _printf_DESC
+    _printf_NAME
+    _printf_OPTION
+    _printf_PROCESS
+    _printf_USAGE
+    _printf_VER
+    main_printf_
+    register_printf_
+ 
+..\bin\dos\modpath.obj  Offset=00000000H
+    _modpath_DESC
+    _modpath_NAME
+    _modpath_OPTION
+    _modpath_PROCESS
+    _modpath_USAGE
+    _modpath_VER
+    main_modpath_
+    register_modpath_
+ 
+..\bin\dos\help.obj     Offset=00000000H
+    _help_DESC
+    _help_NAME
+    _help_OPTION
+    _help_PROCESS
+    _help_USAGE
+    _help_VER
+    display_help_
+    display_help_ex_
+    main_help_
+    print_info_
+    register_help_
+ 
+..\bin\dos\filecmd.obj  Offset=00000000H
+    _filecmd_DESC
+    _filecmd_NAME
+    _filecmd_OPTION
+    _filecmd_PROCESS
+    _filecmd_USAGE
+    _filecmd_VER
+    main_filecmd_
+    process_line_
+    register_filecmd_
+ 
+..\bin\dos\exit.obj     Offset=00000000H
+    _exit_DESC
+    _exit_NAME
+    _exit_OPTION
+    _exit_PROCESS
+    _exit_USAGE
+    _exit_VER
+    main_exit_
+    register_exit_
+ 
+..\bin\dos\echo.obj     Offset=00000000H
+    _xecho_DESC
+    _xecho_NAME
+    _xecho_OPTION
+    _xecho_PROCESS
+    _xecho_USAGE
+    _xecho_VER
+    main_xecho_
+    register_xecho_
+ 
+..\bin\dos\cmd.obj      Offset=00000000H
+    _cmd_count
+    _cmd_pool
+    cmd_exec_
+    cmd_idx_
+    cmd_info_
+    cmd_init_
+    cmd_list_
+    cmd_register_
+ 
+..\bin\dos\cd.obj       Offset=00000000H
+    _zcd_DESC
+    _zcd_NAME
+    _zcd_OPTION
+    _zcd_PROCESS
+    _zcd_USAGE
+    _zcd_VER
+    main_zcd_
+    register_zcd_
+ 

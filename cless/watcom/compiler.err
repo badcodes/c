@@ -1,0 +1,1 @@
+..\src\compiler.c(27): Warning! W131: No prototype found for function 'cprintf'

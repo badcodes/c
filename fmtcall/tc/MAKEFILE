@@ -1,0 +1,41 @@
+
+CC = tcc
+LINK = tlink
+CFLAGS = -1 -A -DMSDOS -N -M -O -Z -mt -r -w -c
+LFLAGS = /s/l/i/d/e/t
+PROJECT = fmtcall
+SRCDIR = ..\src
+BINDIR = ..\bin\dos
+SRCS = fmtcall.c
+OBJS = $(SRCS:.c=.obj)
+LIBS = cs.lib
+LIBPATH = x:\dos\app\tc201\lib
+INCLUDE = x:\dos\app\tc201\include
+OBJECTS = $(addprefix $(BINDIR)\,$(OBJS))
+SOURCES = $(addprefix $(SRCDIR)\,$(SRCS))
+
+#$(error $(SRCS) : $(OBJS))
+
+.SUFFIX : obj
+.SUFFIX : c
+
+vpath .c	$(SRCDIR)
+vpath .exe 	$(DSTDIR)
+vpath .obj	$(DSTDIR)
+vpath .lib	$(LIBPATH)
+
+$(PROJECT).com : $(OBJECTS) 
+	echo $(LIBPATH)\c0t.obj+> tlink.cmd
+	echo $(OBJECTS)>> tlink.cmd
+	echo $(BINDIR)\$@>> tlink.cmd
+	echo.>> tlink.cmd
+	echo $(LIBPATH)\$(LIBS)>> tlink.cmd
+	$(LINK)	$(LFLAGS) @tlink.cmd
+
+$(BINDIR)\fmtcall.obj : $(SRCDIR)\fmtcall.c $(MAKEFILE)
+	$(CC) $(CFLAGS) -o$@ $<
+
+.PHONY : clean
+clean :
+	del $(BINDIR)\$(PROJECT).com
+	del $(OBJECTS)

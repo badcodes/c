@@ -1,0 +1,112 @@
+
+dotask.h,63
+#define DLMAN_INCLUDE_DOTASK19,500
+#define DOWNLOADER 21,530
+
+queue.c,154
+int queue_length(23,567
+void queue_init(28,622
+bool queue_in(35,714
+DATATYPE queue_out(54,1083
+bool queue_is_empty(68,1330
+void queue_clean(73,1396
+
+history.h,37
+#define DLMAN_INCLUDE_HISTORY19,511
+
+path.h,47
+#define MYPLACE_INCLUDE_FILESYSTEM_PATH20,525
+
+readkey.c,67
+int inputavail(25,530
+int readkey(47,915
+char* readline(57,1080
+
+addtask.h,37
+#define DLMAN_INCLUDE_ADDTASK19,519
+
+queue.h,116
+#define DLMAN_INCLUDE_QUEUE19,505
+typedef int bool;23,553
+struct QUEUE 25,572
+typedef struct QUEUE Queue;30,639
+
+readkey.h,37
+#define DLMAN_INCLUDE_READKEY19,502
+
+list.h,127
+#define DLMAN_INCLUDE_LIST19,506
+typedef char *DATATYPE;DATATYPE20,533
+struct LIST 21,557
+typedef struct LIST List;25,616
+
+batchman.c,151
+int app_terminated 41,844
+const int SLEEP 44,870
+void before_terminated(46,892
+void app_usage(65,1208
+int process_input(79,1702
+int main(98,2106
+
+dotask.c,19
+int dotask(25,586
+
+history.c,21
+int remember(21,523
+
+path.c,141
+int strindex(23,563
+int strrindex(33,714
+char *dirname(dirname43,867
+char *basename(basename62,1200
+char *buildpath(buildpath81,1514
+
+config.h,1016
+#define AUTHOR 5,140
+#define HAVE_GETCWD 8,238
+#define HAVE_GETLINE 11,315
+#define HAVE_INTTYPES_H 14,399
+#define HAVE_MALLOC_H 17,484
+#define HAVE_MEMORY_H 20,567
+#define HAVE_MKDIR 23,644
+#define HAVE_SELECT 26,719
+#define HAVE_STDBOOL_H 29,790
+#define HAVE_STDINT_H 32,874
+#define HAVE_STDIO_EXT_H 35,960
+#define HAVE_STDLIB_H 38,1046
+#define HAVE_STRCHR 41,1124
+#define HAVE_STRDUP 44,1200
+#define HAVE_STRINGS_H 47,1282
+#define HAVE_STRING_H 50,1366
+#define HAVE_STRRCHR 53,1445
+#define HAVE_SYS_STAT_H 56,1529
+#define HAVE_SYS_TIME_H 59,1616
+#define HAVE_SYS_TYPES_H 62,1704
+#define HAVE_SYS_WAIT_H 65,1803
+#define HAVE_UNISTD_H 68,1888
+#define HAVE__BOOL 71,1967
+#define PACKAGE_BUGREPORT 74,2068
+#define PACKAGE_BUILDDATE 77,2143
+#define PACKAGE_NAME 80,2248
+#define PACKAGE_STRING 83,2340
+#define PACKAGE_TARNAME 86,2438
+#define PACKAGE_VERSION 89,2519
+#define RETSIGTYPE 92,2620
+#define STDC_HEADERS 95,2700
+#define TIME_WITH_SYS_TIME 98,2800
+# define _GNU_SOURCE 102,2906
+
+addtask.c,45
+#define TEMPFILE 32,691
+int addtask(34,719
+
+batchman.h,190
+#define DLMAN_INCLUDE_DLMAN20,503
+#define APPNAME 22,532
+#define TASKFILE 23,559
+#define HISTORYFILE 24,583
+#define TASKHANDLER 25,613
+#define TASKINCOME 26,640
+#define APPMSG(27,672
+
+config.h.in,0

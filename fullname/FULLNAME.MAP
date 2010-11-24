@@ -1,0 +1,141 @@
+Linker command line:
+
+-z -h+C:\WORKS\C\FULLNAME\FULLNAME.SYM -mC:\WORKS\C\FULLNAME\FULLNAME.MAP \
+  -lm -p_TEXT,text,CODE=0/,LDATA=0/,LBSS=0/,NVRAM=0/,data=0/,bss,stack=0/ \
+  -oC:\TEMP\L.OBJ C:\PROGRAME\PACIFIC\LIB\RT86--DS.OBJ FULLNAME.OBJ \
+  C:\PROGRAME\PACIFIC\LIB\86--DSC.LIB 
+
+Object code version is 3.7
+
+Machine type is 8086
+
+		Name          Link     Load   Length Selector Space Scale
+C:\PROGRAME\PACIFIC\LIB\RT86--DS.OBJ
+		_TEXT            0        0      110       0     0
+		bss            410     1BA0        2     179     0
+		stack            0     2450      400     245     0
+		data             0     1790       B4     179     0
+FULLNAME.OBJ    _TEXT          110      110      150       0     0
+		data            B4     1844       70     179     0
+
+C:\PROGRAME\PACIFIC\LIB\86--DSC.LIB
+getcwd.obj      _TEXT          260      260       80       0     0
+		bss            412     1BA2       44     179     0
+getdrv.obj      _TEXT          2E0      2E0       20       0     0
+		data           124     18B4        4     179     0
+msdos-s.obj     _TEXT          300      300       30       0     0
+setcrt-s.obj    _TEXT          330      330       80       0     0
+		bss            456     1BE6        6     179     0
+start1-s.obj    _TEXT          3B0      3B0       10       0     0
+start2.obj      _TEXT          3C0      3C0      1D0       0     0
+		bss            45C     1BEC       3C     179     0
+		data           128     18B8        2     179     0
+argc.obj        bss            498     1C28        2     179     0
+nearmall.obj    _TEXT          590      590      210       0     0
+		bss            49A     1C2A       10     179     0
+strncpy.obj     _TEXT          7A0      7A0       40       0     0
+strrchr.obj     _TEXT          7E0      7E0       30       0     0
+exit-s.obj      _TEXT          810      810       20       0     0
+printf.obj      _TEXT          830      830       20       0     0
+memcpy-s.obj    _TEXT          850      850       40       0     0
+strcat.obj      _TEXT          890      890       20       0     0
+strcpy.obj      _TEXT          8B0      8B0       20       0     0
+toupper.obj     _TEXT          8D0      8D0       20       0     0
+doprnt.obj      _TEXT          8F0      8F0      710       0     0
+		data           12A     18BA       E8     179     0
+fputc.obj       _TEXT         1000     1000       B0       0     0
+flsbuf.obj      _TEXT         10B0     10B0       C0       0     0
+fseek.obj       _TEXT         1170     1170      1B0       0     0
+isatty.obj      _TEXT         1320     1320       30       0     0
+ioctl-s.obj     _TEXT         1350     1350       20       0     0
+lseek-s.obj     _TEXT         1370     1370       30       0     0
+strchr.obj      _TEXT         13A0     13A0       20       0     0
+strlen-s.obj    _TEXT         13C0     13C0       20       0     0
+ldiv.obj        _TEXT         13E0     13E0      140       0     0
+cleanup.obj     _TEXT         1520     1520       30       0     0
+		bss            4AA     1C3A      802     179     0
+		data           212     19A2       F0     179     0
+fclose.obj      _TEXT         1550     1550       C0       0     0
+tfiles.obj      bss            CAC     243C        2     179     0
+close-s.obj     _TEXT         1610     1610       20       0     0
+remove.obj      _TEXT         1630     1630       10       0     0
+unlink-s.obj    _TEXT         1640     1640       20       0     0
+buf.obj         _TEXT         1660     1660       40       0     0
+		bss            CAE     243E        2     179     0
+nearsbrk.obj    _TEXT         16A0     16A0       60       0     0
+		bss            CB0     2440        2     179     0
+fflush.obj      _TEXT         1700     1700       60       0     0
+		bss            CB2     2442        2     179     0
+write-s.obj     _TEXT         1760     1760       20       0     0
+ctype_.obj      data           302     1A92      102     179     0
+endprof.obj     _TEXT         1780     1780       10       0     0
+critflag.obj    bss            CB4     2444        2     179     0
+
+TOTAL		Name          Link     Load   Length
+	CLASS	CODE     
+		_TEXT            0        0     1790
+
+	CLASS	BSS      
+		bss            410     1BA0      8A6
+
+	CLASS	LDATA    
+
+		stack            0     2450      400
+	CLASS	NVRAM    
+
+	CLASS	DATA     
+		data             0     1790      404
+
+	CLASS	LBSS     
+
+
+
+SEGMENTS	Name		Load	Length	 Top	Selector    Space Class
+
+		_TEXT           000000	001790	001790	       0       0  CODE  
+		data            001790	000CB6	002446	     179       0  DATA  
+		stack           002450	000400	002850	     245       0        
+
+
+                                  Symbol Table
+
+__Bbss           bss   1BA0  __Bdata          data  1790
+__Bstack         stack 2450  __H_TEXT         _TEXT 1790
+__Hbss           bss   0CB6  __Hdata          data  0404
+__Hstack         stack 0400  __Htext          text  1790
+__L_TEXT         _TEXT 0000  __Lbss           bss   0410
+__Ldata          data  0000  __Lstack         stack 0000
+__Ltext          text  1790  ___in_crithand__ bss   0CB4
+__argc_          bss   0498  __atexitptr      bss   04AA
+__bufallo        _TEXT 1660  __buffree        _TEXT 1688
+__cleanup        _TEXT 1520  __ctype_         data  0302
+__flsbuf         _TEXT 10B0  __fullpath       data  00B2
+__getargs        _TEXT 03C0  __iob            data  0212
+__outdone        bss   0CB2  __sibuf          bss   04AC
+__sobuf          bss   08AC  __tfilesptr      bss   0CAC
+_brk             _TEXT 16A0  _buildpath       _TEXT 0211
+_close           _TEXT 1610  _environ         data  0086
+_errno           bss   0410  _exit            _TEXT 0810
+_fclose          _TEXT 1550  _fflush          _TEXT 1700
+_fputc           _TEXT 1000  _free            _TEXT 06E8
+_fseek           _TEXT 11BC  _ftell           _TEXT 12C1
+_getcurdir                   _getcwd          _TEXT 0264
+_getdrv          _TEXT 02E0  _ioctl           _TEXT 1350
+_isatty          _TEXT 1320  _lseek           _TEXT 1370
+_main            _TEXT 0110  _malloc          _TEXT 0590
+_memcpy          _TEXT 0850  _msdos           _TEXT 0300
+_printf          _TEXT 0830  _realloc         _TEXT 06F8
+_remove          _TEXT 1630  _sbrk            _TEXT 16A5
+_set_crithand    _TEXT 0330  _strcat          _TEXT 0890
+_strchr          _TEXT 13A0  _strcpy          _TEXT 08B0
+_strlen          _TEXT 13C0  _strncpy         _TEXT 07A0
+_strrchr         _TEXT 07E0  _toupper         _TEXT 08D0
+_unlink          _TEXT 1640  _vfprintf        _TEXT 08F0
+_write           _TEXT 1760  adivl            _TEXT 1500
+amodl            _TEXT 1510  asadivl          _TEXT 1490
+asamodl          _TEXT 14C0  asldivl          _TEXT 1450
+aslmodl          _TEXT 1480  endprof          _TEXT 1780
+fwait$$          (abs) 9B90  ldivl            _TEXT 1430
+lmodl            _TEXT 1460  small_code       (abs) 0000
+small_data       (abs) 0000  small_model      (abs) 0000
+start            _TEXT 0000  startup          _TEXT 03B0

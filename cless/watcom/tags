@@ -1,0 +1,775 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+A_AGAIN_SEARCH	..\src\CMD.H	45;"	d
+A_BF_LINE	..\src\CMD.H	32;"	d
+A_B_BRACKET	..\src\CMD.H	38;"	d
+A_B_LINE	..\src\CMD.H	4;"	d
+A_B_SCREEN	..\src\CMD.H	5;"	d
+A_B_SCROLL	..\src\CMD.H	6;"	d
+A_B_SEARCH	..\src\CMD.H	7;"	d
+A_B_WINDOW	..\src\CMD.H	36;"	d
+A_DEBUG	..\src\CMD.H	10;"	d
+A_DIGIT	..\src\CMD.H	8;"	d
+A_DISP_OPTION	..\src\CMD.H	9;"	d
+A_EXAMINE	..\src\CMD.H	11;"	d
+A_EXTRA	..\src\CMD.H	59;"	d
+A_FF_LINE	..\src\CMD.H	31;"	d
+A_FIRSTCMD	..\src\CMD.H	12;"	d
+A_FREPAINT	..\src\CMD.H	13;"	d
+A_F_BRACKET	..\src\CMD.H	37;"	d
+A_F_FOREVER	..\src\CMD.H	52;"	d
+A_F_LINE	..\src\CMD.H	14;"	d
+A_F_SCREEN	..\src\CMD.H	15;"	d
+A_F_SCROLL	..\src\CMD.H	16;"	d
+A_F_SEARCH	..\src\CMD.H	17;"	d
+A_F_WINDOW	..\src\CMD.H	35;"	d
+A_GOEND	..\src\CMD.H	18;"	d
+A_GOLINE	..\src\CMD.H	19;"	d
+A_GOMARK	..\src\CMD.H	20;"	d
+A_GOPOS	..\src\CMD.H	53;"	d
+A_HELP	..\src\CMD.H	21;"	d
+A_INDEX_FILE	..\src\CMD.H	40;"	d
+A_INVALID	..\src\CMD.H	55;"	d
+A_NEXT_FILE	..\src\CMD.H	22;"	d
+A_NOACTION	..\src\CMD.H	56;"	d
+A_OPT_SET	..\src\CMD.H	50;"	d
+A_OPT_TOGGLE	..\src\CMD.H	49;"	d
+A_OPT_UNSET	..\src\CMD.H	51;"	d
+A_PERCENT	..\src\CMD.H	23;"	d
+A_PIPE	..\src\CMD.H	39;"	d
+A_PREFIX	..\src\CMD.H	24;"	d
+A_PREV_FILE	..\src\CMD.H	25;"	d
+A_QUIT	..\src\CMD.H	26;"	d
+A_REPAINT	..\src\CMD.H	27;"	d
+A_REVERSE_SEARCH	..\src\CMD.H	47;"	d
+A_SETMARK	..\src\CMD.H	28;"	d
+A_SHELL	..\src\CMD.H	29;"	d
+A_STAT	..\src\CMD.H	30;"	d
+A_T_AGAIN_SEARCH	..\src\CMD.H	46;"	d
+A_T_REVERSE_SEARCH	..\src\CMD.H	48;"	d
+A_UINVALID	..\src\CMD.H	57;"	d
+A_VERSION	..\src\CMD.H	33;"	d
+A_VISUAL	..\src\CMD.H	34;"	d
+BAD_LSEEK	..\src\LESS.H	112;"	d
+BLACK	..\src\compiler.h	19;"	d
+BLINK	..\src\compiler.h	25;"	d
+BLINKING	..\src\LESS.H	99;"	d
+BOLD	..\src\LESS.H	98;"	d
+BOLD2	..\src\LESS.H	102;"	d
+BOOL	..\src\OPTION.H	6;"	d
+BOTTOM	..\src\POSITION.H	6;"	d
+BOTTOM_PLUS_ONE	..\src\POSITION.H	7;"	d
+BS_CONTROL	..\src\LESS.H	83;"	d
+BS_NORMAL	..\src\LESS.H	82;"	d
+BS_SPECIAL	..\src\LESS.H	81;"	d
+BUFSIZ	..\src\CH.C	19;"	d	file:
+BYTEWIDTH	..\src\REGEX.C	126;"	d	file:
+CC	..\src\LESS.MAK	/^CC = bccx +LESS.CFG$/;"	m
+CONTROL	..\src\LESS.H	105;"	d
+DO_SEARCH	..\src\COMMAND.C	930;"	d	file:
+EDITOR	..\src\DEFINES.H	98;"	d
+EDIT_PGM	..\src\DEFINES.H	99;"	d
+END_OF_CHAIN	..\src\CH.C	50;"	d	file:
+END_OPTION_STRING	..\src\OPTION.H	1;"	d
+EOI	..\src\LESS.H	62;"	d
+ESC	..\src\LESS.H	106;"	d
+EXE_dependencies	..\src\LESS.MAK	/^EXE_dependencies =  \\$/;"	m
+EXTEND_BUFFER	..\src\REGEX.C	181;"	d	file:
+EXTEND_BUFFER	..\src\REGEX.C	199;"	d	file:
+FALSE	..\src\SETARGV.C	34;"	d	file:
+FILENAME	..\src\compiler.h	10;"	d
+FILENAME	..\src\compiler.h	32;"	d
+GET_TIME	..\src\DEFINES.H	53;"	d
+GLOB	..\src\DEFINES.H	117;"	d
+GREEN	..\src\compiler.h	23;"	d
+HANDLER	..\src\LESS.H	33;"	d
+HAS__SETJMP	..\src\DEFINES.H	68;"	d
+HELPFILE	..\src\DEFINES.H	140;"	d
+IFILE	..\src\LESS.H	38;"	d
+INIT	..\src\OPTION.H	19;"	d
+INVIS	..\src\LESS.H	100;"	d
+ISPIPE	..\src\EDIT.C	10;"	d	file:
+IS_BINARY_CHAR	..\src\CHARSET.C	22;"	d	file:
+IS_CONTROL_CHAR	..\src\CHARSET.C	23;"	d	file:
+LIGHTBLUE	..\src\compiler.h	24;"	d
+LIGHTGRAY	..\src\compiler.h	20;"	d
+LITTLE_QUIET	..\src\LESS.H	72;"	d
+LOGFILE	..\src\DEFINES.H	128;"	d
+LONGTIME	..\src\LINENUM.C	51;"	d	file:
+LONG_JUMP	..\src\OS.C	30;"	d	file:
+LONG_JUMP	..\src\OS.C	33;"	d	file:
+MAX_CMDLEN	..\src\CMD.H	2;"	d
+MAX_USERCMD	..\src\CMD.H	1;"	d
+MCA_DONE	..\src\COMMAND.C	11;"	d	file:
+MCA_MORE	..\src\COMMAND.C	12;"	d	file:
+MIDDLE	..\src\POSITION.H	8;"	d
+M_proto	..\src\PROMPT.C	/^static char M_proto[] =$/;"	v	file:
+NFAILURES	..\src\REGEX.C	121;"	d	file:
+NMARKS	..\src\MARK.C	20;"	d	file:
+NORMAL	..\src\LESS.H	96;"	d
+NOT_QUIET	..\src\LESS.H	71;"	d
+NOVAR	..\src\OPTION.H	10;"	d
+NO_MCA	..\src\COMMAND.C	10;"	d	file:
+NO_TOGGLE	..\src\OPTION.H	12;"	d
+NPOOL	..\src\LINENUM.C	49;"	d	file:
+NULL	..\src\LESS.H	65;"	d
+NULL_IFILE	..\src\LESS.H	39;"	d
+NULL_PARG	..\src\LESS.H	60;"	d
+NULL_POSITION	..\src\LESS.H	28;"	d
+NUMBER	..\src\OPTION.H	8;"	d
+ONLY_RETURN	..\src\DEFINES.H	135;"	d
+OPT_NO_TOGGLE	..\src\OPTION.H	24;"	d
+OPT_SET	..\src\OPTION.H	27;"	d
+OPT_TOGGLE	..\src\OPTION.H	25;"	d
+OPT_UNSET	..\src\OPTION.H	26;"	d
+OTYPE	..\src\OPTION.H	14;"	d
+PARG	..\src\LESS.H	/^} PARG;$/;"	t	typeref:union:parg
+PATFETCH	..\src\REGEX.C	169;"	d	file:
+PATFETCH_RAW	..\src\REGEX.C	174;"	d	file:
+PATPUSH	..\src\REGEX.C	167;"	d	file:
+PATUNFETCH	..\src\REGEX.C	178;"	d	file:
+PC	..\src\SCREEN.C	/^\/*extern*\/ char PC;		\/* Pad character *\/$/;"	v
+PERROR	..\src\DEFINES.H	48;"	d
+PIPEC	..\src\DEFINES.H	123;"	d
+POSITION	..\src\LESS.H	/^typedef long		POSITION;$/;"	t
+PREFETCH	..\src\REGEX.C	1176;"	d	file:
+PR_LONG	..\src\LESS.H	78;"	d
+PR_MEDIUM	..\src\LESS.H	77;"	d
+PR_SHORT	..\src\LESS.H	76;"	d
+QUERY	..\src\OPTION.H	20;"	d
+READ_INTR	..\src\LESS.H	68;"	d
+RECOMP	..\src\DEFINES.H	85;"	d
+RED	..\src\compiler.h	21;"	d
+REGCMP	..\src\DEFINES.H	84;"	d
+REPAINT	..\src\OPTION.H	11;"	d
+RE_AWK_CLASS_HACK	..\src\REGEX.H	70;"	d
+RE_BK_PLUS_QM	..\src\REGEX.H	48;"	d
+RE_CONTEXT_INDEP_OPS	..\src\REGEX.H	65;"	d
+RE_NEWLINE_OR	..\src\REGEX.H	56;"	d
+RE_NO_BK_PARENS	..\src\REGEX.H	40;"	d
+RE_NO_BK_VBAR	..\src\REGEX.H	44;"	d
+RE_NREGS	..\src\REGEX.H	30;"	d
+RE_SYNTAX_AWK	..\src\REGEX.H	73;"	d
+RE_SYNTAX_EGREP	..\src\REGEX.H	75;"	d
+RE_SYNTAX_EMACS	..\src\REGEX.H	78;"	d
+RE_SYNTAX_GREP	..\src\REGEX.H	77;"	d
+RE_TIGHT_VBAR	..\src\REGEX.H	52;"	d
+SEARCHPATH_BUFFER	..\src\compiler.c	/^static char SEARCHPATH_BUFFER[_MAX_PATH];$/;"	v	file:
+SET_JUMP	..\src\OS.C	29;"	d	file:
+SET_JUMP	..\src\OS.C	32;"	d	file:
+SHELL_ESCAPE	..\src\DEFINES.H	91;"	d
+SIGNAL	..\src\LESS.H	108;"	d
+SIGN_EXTEND_CHAR	..\src\REGEX.C	129;"	d	file:
+SIGSETMASK	..\src\DEFINES.H	75;"	d
+SRCH_BACK	..\src\LESS.H	87;"	d
+SRCH_DIR	..\src\LESS.H	92;"	d
+SRCH_FIRST_FILE	..\src\LESS.H	90;"	d
+SRCH_FORW	..\src\LESS.H	86;"	d
+SRCH_NOMATCH	..\src\LESS.H	88;"	d
+SRCH_PAST_EOF	..\src\LESS.H	89;"	d
+SRCH_REVERSE	..\src\LESS.H	93;"	d
+STAT	..\src\DEFINES.H	42;"	d
+STOREC	..\src\LINE.C	299;"	d	file:
+STRING	..\src\OPTION.H	9;"	d
+SYNTAX	..\src\REGEX.C	73;"	d	file:
+S_INTERRUPT	..\src\SIGNAL.C	19;"	d	file:
+S_STOP	..\src\SIGNAL.C	21;"	d	file:
+S_WINCH	..\src\SIGNAL.C	24;"	d	file:
+Sword	..\src\REGEX.C	70;"	d	file:
+TAGS	..\src\DEFINES.H	104;"	d
+TASM	..\src\LESS.MAK	/^TASM = TASM$/;"	m
+TERMIO	..\src\DEFINES.H	61;"	d
+TLINK	..\src\LESS.MAK	/^TLINK = tlinkx$/;"	m
+TOGGLE	..\src\OPTION.H	21;"	d
+TOP	..\src\POSITION.H	4;"	d
+TOP_PLUS_ONE	..\src\POSITION.H	5;"	d
+TRIPLE	..\src\OPTION.H	7;"	d
+TRUE	..\src\SETARGV.C	35;"	d	file:
+TURBOC	..\src\DEFINES.H	9;"	d
+UNDERLINE	..\src\LESS.H	97;"	d
+USERFILE	..\src\DEFINES.H	110;"	d
+VERY_QUIET	..\src\LESS.H	73;"	d
+VOID	..\src\DEFINES.H	26;"	d
+VOID_POINTER	..\src\DEFINES.H	28;"	d
+VOID_POINTER	..\src\DEFINES.H	30;"	d
+WHITESP	..\src\TAGS.C	4;"	d	file:
+W_FLAGS	..\src\OPTTBL.C	199;"	d	file:
+W_FLAGS	..\src\OPTTBL.C	206;"	d	file:
+XENIX	..\src\DEFINES.H	20;"	d
+XRZ_INCLUDE_COMPILER	..\src\compiler.h	2;"	d
+XRZ_INCLUDE_DIR	..\src\dir.h	2;"	d
+YELLOW	..\src\compiler.h	22;"	d
+__MSDOS__	..\src\DEFINES.H	14;"	d
+__MSDOS__	..\src\DEFINES.H	16;"	d
+__MSDOS__	..\src\DEFINES.H	6;"	d
+_setargv__	..\src\SETARGV.C	/^void _setargv__(void)$/;"	f
+_video	..\src\compiler.c	/^struct videoconfig _video;$/;"	v	typeref:struct:videoconfig
+_videoattr	..\src\SCREEN.C	13;"	d	file:
+_videoattr	..\src\compiler.h	14;"	d
+action	..\src\POPEN.C	/^enum action {$/;"	g	file:
+add	..\src\POPEN.C	/^add(FILE *f, const char *command, const char *name, enum action what)$/;"	f	file:
+add_back_pos	..\src\POSITION.C	/^add_back_pos(pos)$/;"	f
+add_cmdtable	..\src\DECODE.C	/^add_cmdtable(filename)$/;"	f
+add_forw_pos	..\src\POSITION.C	/^add_forw_pos(pos)$/;"	f
+add_hometable	..\src\DECODE.C	/^add_hometable()$/;"	f
+add_line	..\src\SCREEN.C	/^add_line()$/;"	f
+add_lnum	..\src\LINENUM.C	/^add_lnum(lno, pos)$/;"	f
+addfile	..\src\WILDCARD.C	/^addfile(f)$/;"	f
+adjsline	..\src\POSITION.C	/^adjsline(sline)$/;"	f
+after_dot	..\src\REGEX.H	/^  after_dot,   \/* Succeeds if after dot *\/$/;"	e	enum:regexpcode
+alloca	..\src\REGEX.C	52;"	d	file:
+alloca	..\src\REGEX.C	62;"	d	file:
+allocated	..\src\REGEX.H	/^  int allocated;     \/* Size of space that  buffer  points to *\/$/;"	m	struct:re_pattern_buffer
+anchor	..\src\IFILE.C	/^static struct ifile anchor = { &anchor, &anchor, 0 };$/;"	v	typeref:struct:ifile	file:
+anchor	..\src\LINENUM.C	/^static struct linenum anchor;		\/* Anchor of the list *\/$/;"	v	typeref:struct:linenum	file:
+any_display	..\src\MAIN.C	/^public int	any_display = 0;$/;"	v
+anychar	..\src\REGEX.H	/^  anychar,     \/* matches any one character *\/$/;"	e	enum:regexpcode
+ap_int	..\src\PROMPT.C	/^ap_int(n)$/;"	f	file:
+ap_pos	..\src\PROMPT.C	/^ap_pos(pos)$/;"	f	file:
+ap_quest	..\src\PROMPT.C	/^ap_quest()$/;"	f	file:
+ap_str	..\src\PROMPT.C	/^ap_str(s)$/;"	f	file:
+at_dot	..\src\REGEX.H	/^  at_dot,      \/* Succeeds if at dot *\/$/;"	e	enum:regexpcode
+attr	..\src\LINE.C	/^static char attr[1024];		\/* Extension of linebuf to hold attributes *\/$/;"	v	file:
+attr_ewidth	..\src\LINE.C	/^attr_ewidth(a)$/;"	f
+attr_swidth	..\src\LINE.C	/^attr_swidth(a)$/;"	f
+auto_wrap	..\src\SCREEN.C	/^public int auto_wrap;		\/* Terminal does \\r\\n when write past margin *\/$/;"	v
+autobuf	..\src\OPTTBL.C	/^public int autobuf;		\/* Automatically allocate buffers as needed *\/$/;"	v
+back	..\src\FORWBACK.C	/^back(n, pos, force, only_last)$/;"	f
+back_line	..\src\INPUT.C	/^back_line(curr_pos)$/;"	f
+back_raw_line	..\src\LINE.C	/^back_raw_line(curr_pos, linep)$/;"	f
+back_scroll	..\src\OPTTBL.C	/^public int back_scroll;		\/* Repaint screen on backwards movement *\/$/;"	v
+backc	..\src\LINE.C	/^backc()$/;"	f	file:
+backspace	..\src\SCREEN.C	/^backspace()$/;"	f
+backward	..\src\FORWBACK.C	/^backward(n, force, only_last)$/;"	f
+bad_file	..\src\FILENAME.C	/^bad_file(filename)$/;"	f
+badmark	..\src\MARK.C	/^badmark(c)$/;"	f
+bcmp	..\src\REGEX.C	45;"	d	file:
+bcmp_translate	..\src\REGEX.C	/^bcmp_translate (unsigned char *s1, unsigned char *s2, int len, unsigned char *translate)$/;"	f	file:
+bcopy	..\src\REGEX.C	44;"	d	file:
+before_dot	..\src\REGEX.H	/^  before_dot,  \/* Succeeds if before dot *\/$/;"	e	enum:regexpcode
+begbuf	..\src\REGEX.H	/^  begbuf,      \/* Succeeds if at beginning of buffer *\/$/;"	e	enum:regexpcode
+begline	..\src\REGEX.H	/^  begline,   \/* fails unless at beginning of line *\/$/;"	e	enum:regexpcode
+bell	..\src\SCREEN.C	/^bell()$/;"	f
+bin_file	..\src\FILENAME.C	/^bin_file(f)$/;"	f
+binary_char	..\src\CHARSET.C	/^binary_char(c)$/;"	f
+binattr	..\src\CHARSET.C	/^public int binattr = BLINKING;$/;"	v
+binattr	..\src\CHARSET.C	/^public int binattr = BOLD2;$/;"	v
+binfmt	..\src\CHARSET.C	/^static char *binfmt = "\\\\%o";$/;"	v	file:
+bl_e_width	..\src\SCREEN.C	/^public int bl_s_width, bl_e_width;	\/* Printing width of blink seq *\/$/;"	v
+bl_enter	..\src\SCREEN.C	/^bl_enter()$/;"	f
+bl_exit	..\src\SCREEN.C	/^bl_exit()$/;"	f
+bl_s_width	..\src\SCREEN.C	/^public int bl_s_width, bl_e_width;	\/* Printing width of blink seq *\/$/;"	v
+block	..\src\CH.C	/^	long block;$/;"	m	struct:buf	file:
+block	..\src\CH.C	/^	long block;$/;"	m	struct:filestate	file:
+bo2_enter	..\src\SCREEN.C	/^bo2_enter()$/;"	f
+bo2_exit	..\src\SCREEN.C	/^bo2_exit()$/;"	f
+bo_e_width	..\src\SCREEN.C	/^public int bo_s_width, bo_e_width;	\/* Printing width of boldface seq *\/$/;"	v
+bo_enter	..\src\SCREEN.C	/^bo_enter()$/;"	f
+bo_exit	..\src\SCREEN.C	/^bo_exit()$/;"	f
+bo_s_width	..\src\SCREEN.C	/^public int bo_s_width, bo_e_width;	\/* Printing width of boldface seq *\/$/;"	v
+bs_mode	..\src\OPTTBL.C	/^public int bs_mode;		\/* How to process backspaces *\/$/;"	v
+buf	..\src\CH.C	/^struct buf {$/;"	s	file:
+buf	..\src\WILDCARD.C	/^char *buf, *bufp;$/;"	v
+buf_head	..\src\CH.C	51;"	d	file:
+buf_tail	..\src\CH.C	52;"	d	file:
+buffer	..\src\REGEX.H	/^  char *buffer;       \/* Space holding the compiled pattern commands. *\/$/;"	m	struct:re_pattern_buffer
+buffered	..\src\CH.C	/^buffered(block)$/;"	f	file:
+bufp	..\src\WILDCARD.C	/^char *buf, *bufp;$/;"	v
+bzero	..\src\REGEX.C	46;"	d	file:
+calcgap	..\src\LINENUM.C	/^calcgap(p)$/;"	f	file:
+can_be_null	..\src\REGEX.H	/^  char can_be_null;   \/* Set to one by compiling fastmap$/;"	m	struct:re_pattern_buffer
+cannot	..\src\SCREEN.C	/^cannot(s)$/;"	f	file:
+caseless	..\src\OPTTBL.C	/^public int caseless;		\/* Do "caseless" searches *\/$/;"	v
+cat_file	..\src\EDIT.C	/^cat_file()$/;"	f
+cbufs	..\src\OPTTBL.C	/^public int cbufs;		\/* Current number of buffers *\/$/;"	v
+ch_addbuf	..\src\CH.C	/^ch_addbuf(nnew)$/;"	f	file:
+ch_back_get	..\src\CH.C	/^ch_back_get()$/;"	f
+ch_beg_seek	..\src\CH.C	/^ch_beg_seek()$/;"	f
+ch_block	..\src\CH.C	54;"	d	file:
+ch_end_seek	..\src\CH.C	/^ch_end_seek()$/;"	f
+ch_flush	..\src\CH.C	/^ch_flush()$/;"	f
+ch_forw_get	..\src\CH.C	/^ch_forw_get()$/;"	f
+ch_fpos	..\src\CH.C	56;"	d	file:
+ch_fsize	..\src\CH.C	57;"	d	file:
+ch_get	..\src\CH.C	84;"	d	file:
+ch_length	..\src\CH.C	/^ch_length()$/;"	f
+ch_nbuf	..\src\CH.C	/^ch_nbuf(want_nbufs)$/;"	f
+ch_nbufs	..\src\CH.C	53;"	d	file:
+ch_nonpipe	..\src\CH.C	/^ch_nonpipe()$/;"	f
+ch_offset	..\src\CH.C	55;"	d	file:
+ch_pipe	..\src\CH.C	/^ch_pipe()$/;"	f
+ch_seek	..\src\CH.C	/^ch_seek(pos)$/;"	f
+ch_tell	..\src\CH.C	/^ch_tell()$/;"	f
+ch_zero	..\src\LESS.H	119;"	d
+chardef	..\src\CHARSET.C	/^static char chardef[256];$/;"	v	file:
+charset	..\src\CHARSET.C	/^struct charset {$/;"	s	file:
+charset	..\src\REGEX.H	/^  charset,     \/* matches any one char belonging to specified set.$/;"	e	enum:regexpcode
+charset_not	..\src\REGEX.H	/^  charset_not, \/* similar but match any character that is NOT one of those specified *\/$/;"	e	enum:regexpcode
+charsets	..\src\CHARSET.C	/^} charsets[] = {$/;"	v	typeref:struct:charset
+cheaper	..\src\SCREEN.C	/^cheaper(t1, t2, doit, def)$/;"	f	file:
+check_for_desqview	..\src\MAIN.C	/^void check_for_desqview ()$/;"	f
+chopline	..\src\OPTTBL.C	/^public int chopline;		\/* Truncate displayed lines at screen width *\/$/;"	v
+clear	..\src\SCREEN.C	/^clear()$/;"	f
+clear_eol	..\src\SCREEN.C	/^clear_eol()$/;"	f
+clr_linenum	..\src\LINENUM.C	/^clr_linenum()$/;"	f
+clreol	..\src\compiler.c	/^void clreol(void) {$/;"	f
+clrscr	..\src\compiler.h	27;"	d
+cmd_char	..\src\CMDBUF.C	/^cmd_char(c)$/;"	f
+cmd_col	..\src\CMDBUF.C	/^static int cmd_col;		\/* Current column of the multi-char command *\/$/;"	v	file:
+cmd_decode	..\src\DECODE.C	/^cmd_decode(cmd, sp)$/;"	f
+cmd_erase	..\src\CMDBUF.C	/^cmd_erase()$/;"	f
+cmd_exec	..\src\COMMAND.C	/^cmd_exec()$/;"	f	file:
+cmd_int	..\src\CMDBUF.C	/^cmd_int()$/;"	f
+cmd_putstr	..\src\CMDBUF.C	/^cmd_putstr(s)$/;"	f
+cmd_reset	..\src\CMDBUF.C	/^cmd_reset()$/;"	f
+cmd_search	..\src\DECODE.C	/^cmd_search(cmd, table, endtable, sp)$/;"	f	file:
+cmdbuf	..\src\CMDBUF.C	/^static char cmdbuf[120];	\/* Buffer for holding a multi-char command *\/$/;"	v	file:
+cmdname	..\src\LESSKEY.C	/^struct cmdname$/;"	s	file:
+cmdnames	..\src\LESSKEY.C	/^} cmdnames[] = $/;"	v	typeref:struct:cmdname
+cmdtable	..\src\DECODE.C	/^static char cmdtable[] =$/;"	v	file:
+cn_action	..\src\LESSKEY.C	/^	int cn_action;$/;"	m	struct:cmdname	file:
+cn_name	..\src\LESSKEY.C	/^	char *cn_name;$/;"	m	struct:cmdname	file:
+column	..\src\LINE.C	/^static int column;		\/* Printable length, accounting for$/;"	v	file:
+command	..\src\POPEN.C	/^	const char *command;		\/* Command to execute *\/$/;"	m	struct:todo	file:
+commands	..\src\COMMAND.C	/^commands()$/;"	f
+cond	..\src\PROMPT.C	/^cond(c, where)$/;"	f	file:
+control_char	..\src\CHARSET.C	/^control_char(c)$/;"	f
+cost	..\src\SCREEN.C	/^cost(t)$/;"	f	file:
+costcount	..\src\SCREEN.C	/^static int costcount;$/;"	v	file:
+cp	..\src\CMDBUF.C	/^static char *cp;		\/* Pointer into cmdbuf *\/$/;"	v	file:
+ctldisp	..\src\OPTTBL.C	/^public int ctldisp;		\/* Send control chars to screen untranslated *\/$/;"	v
+curr	..\src\LINE.C	/^static int curr;		\/* Index into linebuf *\/$/;"	v	file:
+curr_byte	..\src\PROMPT.C	/^curr_byte(where)$/;"	f	file:
+curr_ifile	..\src\MAIN.C	/^public IFILE	curr_ifile = NULL_IFILE;$/;"	v
+currline	..\src\LINENUM.C	/^currline(where)$/;"	f
+data	..\src\CH.C	/^	unsigned char data[BUFSIZ];$/;"	m	struct:buf	file:
+datasize	..\src\CH.C	/^	unsigned int datasize;$/;"	m	struct:buf	file:
+deftable	..\src\DECODE.C	/^static struct tablelist deftable = $/;"	v	typeref:struct:tablelist	file:
+deinit	..\src\SCREEN.C	/^deinit()$/;"	f
+delete	..\src\POPEN.C	/^	delete, 			\/* Used for "r". Delete the tmp file *\/$/;"	e	enum:action	file:
+desc	..\src\CHARSET.C	/^	char *desc;$/;"	m	struct:charset	file:
+directvideo	..\src\compiler.c	/^int directvideo;$/;"	v
+do_append	..\src\LINE.C	/^do_append(c)$/;"	f	file:
+dummy_failure_jump	..\src\REGEX.H	/^  dummy_failure_jump,  \/* jump, and push a dummy failure point.$/;"	e	enum:regexpcode
+duplicate	..\src\REGEX.H	/^  duplicate,    \/* match a duplicate of something remembered.$/;"	e	enum:regexpcode
+e_proto	..\src\PROMPT.C	/^static char e_proto[] =$/;"	v	file:
+ecalloc	..\src\MAIN.C	/^ecalloc(count, size)$/;"	f
+edit	..\src\EDIT.C	/^edit(filename, just_looking)$/;"	f
+edit_first	..\src\EDIT.C	/^edit_first()$/;"	f
+edit_index	..\src\EDIT.C	/^edit_index(n)$/;"	f
+edit_last	..\src\EDIT.C	/^edit_last()$/;"	f
+edit_list	..\src\EDIT.C	/^edit_list(list)$/;"	f
+edit_next	..\src\EDIT.C	/^edit_next(n)$/;"	f
+edit_prev	..\src\EDIT.C	/^edit_prev(n)$/;"	f
+editor	..\src\MAIN.C	/^public char *	editor;$/;"	v
+editproto	..\src\MAIN.C	/^public char *	editproto;$/;"	v
+empty_lines	..\src\POSITION.C	/^empty_lines(s, e)$/;"	f
+empty_screen	..\src\POSITION.C	/^empty_screen()$/;"	f
+end	..\src\REGEX.H	/^  int end[RE_NREGS];$/;"	m	struct:re_registers
+end_logfile	..\src\CH.C	/^end_logfile()$/;"	f
+endbuf	..\src\REGEX.H	/^  endbuf,      \/* Succeeds if at end of buffer *\/$/;"	e	enum:regexpcode
+endline	..\src\REGEX.H	/^  endline,   \/* fails unless at end of line *\/$/;"	e	enum:regexpcode
+eof_bell	..\src\FORWBACK.C	/^eof_bell()$/;"	f	file:
+eof_check	..\src\FORWBACK.C	/^eof_check()$/;"	f	file:
+eq_message	..\src\PROMPT.C	/^eq_message()$/;"	f
+eqproto	..\src\PROMPT.C	/^public char *eqproto = e_proto;$/;"	v
+erase_char	..\src\SCREEN.C	/^public int erase_char, kill_char; \/* The user's erase and line-kill chars *\/$/;"	v
+errmsgs	..\src\OUTPUT.C	/^public int errmsgs;	\/* Count of messages displayed by error() *\/$/;"	v
+errno_message	..\src\OS.C	/^errno_message(filename)$/;"	f
+error	..\src\OUTPUT.C	/^error(fmt, parg)$/;"	f
+error	..\src\REGEX.C	/^void error (char *string)$/;"	f
+every_first_cmd	..\src\MAIN.C	/^public char *	every_first_cmd = NULL;$/;"	v
+exactn	..\src\REGEX.H	/^  exactn,    \/* followed by one byte giving n, and then by n literal bytes *\/$/;"	e	enum:regexpcode
+exec_mca	..\src\COMMAND.C	/^exec_mca()$/;"	f	file:
+execute	..\src\POPEN.C	/^	execute				\/* Used for "w". Execute the command. *\/$/;"	e	enum:action	file:
+expand	..\src\WILDCARD.C	/^expand(name)$/;"	f
+ext_ifile	..\src\IFILE.C	27;"	d	file:
+f	..\src\POPEN.C	/^	FILE *f;			\/* File we are working on (to fclose) *\/$/;"	m	struct:todo	file:
+fake_interrupt	..\src\SIGNAL.C	/^fake_interrupt()$/;"	f
+fastmap	..\src\REGEX.H	/^  char *fastmap;      \/* Pointer to fastmap, if any, or zero if none. *\/$/;"	m	struct:re_pattern_buffer
+fastmap_accurate	..\src\REGEX.H	/^  char fastmap_accurate;$/;"	m	struct:re_pattern_buffer
+fch_get	..\src\CH.C	/^fch_get()$/;"	f	file:
+fexpand	..\src\FILENAME.C	/^fexpand(s)$/;"	f
+ffblk	..\src\compiler.h	9;"	d
+file	..\src\CH.C	/^public int file = -1;		\/* File descriptor of the input file *\/$/;"	v
+filesize	..\src\FILENAME.C	/^filesize(f)$/;"	f
+filestate	..\src\CH.C	/^struct filestate {$/;"	s	file:
+finalize_jump	..\src\REGEX.H	/^  finalize_jump,       \/* Throw away latest failure point and then jump to address. *\/$/;"	e	enum:regexpcode
+find_helpfile	..\src\FILENAME.C	/^find_helpfile()$/;"	f
+find_ifile	..\src\IFILE.C	/^find_ifile(filename)$/;"	f	file:
+find_linenum	..\src\LINENUM.C	/^find_linenum(pos)$/;"	f
+find_pos	..\src\LINENUM.C	/^find_pos(lno)$/;"	f
+findclose	..\src\compiler.h	8;"	d
+findfirst	..\src\compiler.h	6;"	d
+findnext	..\src\compiler.h	7;"	d
+findopt	..\src\OPTTBL.C	/^findopt(c)$/;"	f
+findtag	..\src\TAGS.C	/^findtag(tag)$/;"	f
+flip_triple	..\src\OPTION.C	/^flip_triple(val, lc)$/;"	f	file:
+flush	..\src\OUTPUT.C	/^flush()$/;"	f
+force_logfile	..\src\MAIN.C	/^public int	force_logfile = 0;$/;"	v
+force_open	..\src\OPTTBL.C	/^public int force_open;		\/* Open the file even if not regular file *\/$/;"	v
+forw	..\src\FORWBACK.C	/^forw(n, pos, force, only_last, nblank)$/;"	f
+forw_line	..\src\INPUT.C	/^forw_line(curr_pos)$/;"	f
+forw_raw_line	..\src\LINE.C	/^forw_raw_line(curr_pos, linep)$/;"	f
+forw_scroll	..\src\OPTTBL.C	/^public int forw_scroll;		\/* Repaint screen on forward movement *\/$/;"	v
+forward	..\src\FORWBACK.C	/^forward(n, force, only_last)$/;"	f
+fpos	..\src\CH.C	/^	POSITION fpos;$/;"	m	struct:filestate	file:
+freelist	..\src\LINENUM.C	/^static struct linenum *freelist;	\/* Anchor of the unused entries *\/$/;"	v	typeref:struct:linenum	file:
+fsize	..\src\CH.C	/^	POSITION fsize;$/;"	m	struct:filestate	file:
+gap	..\src\LINENUM.C	/^	POSITION gap;			\/* Gap between prev and next *\/$/;"	m	struct:linenum	file:
+get_back_scroll	..\src\FORWBACK.C	/^get_back_scroll()$/;"	f
+get_cmdbuf	..\src\CMDBUF.C	/^get_cmdbuf()$/;"	f
+get_filename	..\src\IFILE.C	/^get_filename(ifile)$/;"	f
+get_forw_scroll	..\src\FORWBACK.C	/^get_forw_scroll()$/;"	f
+get_ifile	..\src\IFILE.C	/^get_ifile(filename, prev)$/;"	f
+get_index	..\src\IFILE.C	/^get_index(ifile)$/;"	f
+get_pos	..\src\IFILE.C	/^get_pos(ifile, scrpos)$/;"	f
+get_scrpos	..\src\POSITION.C	/^get_scrpos(scrpos)$/;"	f
+get_term	..\src\SCREEN.C	/^get_term()$/;"	f
+get_time	..\src\OS.C	/^get_time()$/;"	f
+getcc	..\src\COMMAND.C	/^getcc()$/;"	f	file:
+getchr	..\src\TTYIN.C	/^getchr()$/;"	f
+getmark	..\src\MARK.C	/^getmark(c)$/;"	f	file:
+getnum	..\src\OPTION.C	/^getnum(sp, c, errp)$/;"	f
+getumark	..\src\MARK.C	/^getumark(c)$/;"	f	file:
+gline	..\src\LINE.C	/^gline(i, ap)$/;"	f
+glob	..\src\FILENAME.C	/^glob(filename)$/;"	f
+gomark	..\src\MARK.C	/^gomark(c)$/;"	f
+gotoxy	..\src\compiler.h	26;"	d
+h_filename	..\src\IFILE.C	/^	char *h_filename;		\/* Name of the file *\/$/;"	m	struct:ifile	file:
+h_index	..\src\IFILE.C	/^	int h_index;			\/* Index within command line list *\/$/;"	m	struct:ifile	file:
+h_next	..\src\IFILE.C	/^	struct ifile *h_next;		\/* Links for command line list *\/$/;"	m	struct:ifile	typeref:struct:ifile::ifile	file:
+h_prev	..\src\IFILE.C	/^	struct ifile *h_prev;$/;"	m	struct:ifile	typeref:struct:ifile::ifile	file:
+h_scrpos	..\src\IFILE.C	/^	struct scrpos h_scrpos;		\/* Saved position within the file *\/$/;"	m	struct:ifile	typeref:struct:ifile::scrpos	file:
+help	..\src\HELP.C	/^help()$/;"	f
+hit_eof	..\src\FORWBACK.C	/^public int hit_eof;	\/* Keeps track of how many times we hit end of file *\/$/;"	v
+home	..\src\SCREEN.C	/^home()$/;"	f
+homefile	..\src\FILENAME.C	/^homefile(filename)$/;"	f
+how_search	..\src\OPTTBL.C	/^public int how_search;		\/* Where should forward searches start? *\/$/;"	v
+ichardef	..\src\CHARSET.C	/^ichardef(s)$/;"	f	file:
+icharset	..\src\CHARSET.C	/^icharset(name)$/;"	f	file:
+ierror	..\src\OUTPUT.C	/^ierror(fmt, parg)$/;"	f
+ifile	..\src\IFILE.C	/^struct ifile {$/;"	s	file:
+ifiles	..\src\IFILE.C	/^static int ifiles = 0;$/;"	v	file:
+ignaw	..\src\SCREEN.C	/^public int ignaw;		\/* Terminal ignores \\n immediately after wrap *\/$/;"	v
+ignore_eoi	..\src\CH.C	/^public int ignore_eoi = 0;$/;"	v
+inc_costcount	..\src\SCREEN.C	/^inc_costcount(c)$/;"	f	file:
+init	..\src\SCREEN.C	/^init()$/;"	f
+init_charset	..\src\CHARSET.C	/^init_charset()$/;"	f
+init_done	..\src\SCREEN.C	/^static int init_done = 0;$/;"	v	file:
+init_mark	..\src\MARK.C	/^init_mark()$/;"	f
+init_option	..\src\OPTTBL.C	/^init_option()$/;"	f
+init_prompt	..\src\PROMPT.C	/^init_prompt()$/;"	f
+init_signals	..\src\SIGNAL.C	/^init_signals(on)$/;"	f
+init_syntax_once	..\src\REGEX.C	/^init_syntax_once (void)$/;"	f	file:
+initial_scrpos	..\src\MAIN.C	/^public struct scrpos initial_scrpos;$/;"	v	typeref:struct:scrpos
+insert_jump	..\src\REGEX.C	/^insert_jump (char op, char *from, char *to, char *current_end)$/;"	f	file:
+insline	..\src\compiler.h	28;"	d
+int_ifile	..\src\IFILE.C	26;"	d	file:
+intr_to_abort	..\src\OUTPUT.C	/^static char intr_to_abort[] = "... (interrupt to abort)";$/;"	v	file:
+intread	..\src\OS.C	/^intread()$/;"	f
+iprintf	..\src\OUTPUT.C	/^iprintf(fmt, parg)$/;"	f	file:
+iprintnum	..\src\OUTPUT.C	/^iprintnum(num, radix)$/;"	f	file:
+iread	..\src\OS.C	/^iread(fd, buf, len)$/;"	f
+is_null_line	..\src\LINE.C	/^static int is_null_line;	\/* There is no current line *\/$/;"	v	file:
+is_tty	..\src\MAIN.C	/^public int	is_tty;$/;"	v
+isoptpending	..\src\OPTION.C	/^isoptpending()$/;"	f
+isoptstring	..\src\MAIN.C	86;"	d	file:
+isoptstring	..\src\MAIN.C	89;"	d	file:
+ispipe	..\src\MAIN.C	/^public int	ispipe;$/;"	v
+jump	..\src\REGEX.H	/^  jump,        \/* followed by two bytes giving relative address to jump to *\/$/;"	e	enum:regexpcode
+jump_back	..\src\JUMP.C	/^jump_back(n)$/;"	f
+jump_forw	..\src\JUMP.C	/^jump_forw()$/;"	f
+jump_line_loc	..\src\JUMP.C	/^jump_line_loc(pos, sline)$/;"	f
+jump_loc	..\src\JUMP.C	/^jump_loc(pos, sline)$/;"	f
+jump_percent	..\src\JUMP.C	/^jump_percent(percent)$/;"	f
+jump_sline	..\src\OPTTBL.C	/^public int jump_sline;		\/* Screen line of "jump target" *\/$/;"	v
+kill_char	..\src\SCREEN.C	/^public int erase_char, kill_char; \/* The user's erase and line-kill chars *\/$/;"	v
+know_dumb	..\src\OPTTBL.C	/^public int know_dumb;		\/* Don't complain about dumb terminals *\/$/;"	v
+lastmark	..\src\MARK.C	/^lastmark()$/;"	f
+len	..\src\WILDCARD.C	/^unsigned len;$/;"	v
+len_cmdbuf	..\src\CMDBUF.C	/^len_cmdbuf()$/;"	f
+line	..\src\LINENUM.C	/^	unsigned line;			\/* Line number *\/$/;"	m	struct:linenum	file:
+linebuf	..\src\LINE.C	/^static char linebuf[1024];	\/* Buffer which holds the current output line *\/$/;"	v	file:
+linenum	..\src\LINENUM.C	/^struct linenum$/;"	s	file:
+linenums	..\src\OPTTBL.C	/^public int linenums;		\/* Use line numbers *\/$/;"	v
+lmark	..\src\MARK.C	/^static struct mark lmark;$/;"	v	typeref:struct:mark	file:
+ln	..\src\LESS.H	/^	int ln;$/;"	m	struct:scrpos
+lnloop	..\src\LINENUM.C	/^public int lnloop = 0;			\/* Are we in the line num loop? *\/$/;"	v
+logfile	..\src\MAIN.C	/^public int	logfile = -1;$/;"	v
+longish	..\src\LINENUM.C	/^longish()$/;"	f	file:
+longloopmessage	..\src\LINENUM.C	/^longloopmessage()$/;"	f	file:
+loopcount	..\src\LINENUM.C	/^static long loopcount;$/;"	v	file:
+lower_left	..\src\SCREEN.C	/^lower_left()$/;"	f
+lsystem	..\src\LSYSTEM.C	/^lsystem(cmd)$/;"	f
+m_ifile	..\src\MARK.C	/^	IFILE m_ifile;$/;"	m	struct:mark	file:
+m_proto	..\src\PROMPT.C	/^static char m_proto[] =$/;"	v	file:
+m_scrpos	..\src\MARK.C	/^	struct scrpos m_scrpos;$/;"	m	struct:mark	typeref:struct:mark::scrpos	file:
+main	..\src\LESSKEY.C	/^void main(argc, argv)$/;"	f
+main	..\src\MAIN.C	/^main(argc, argv)$/;"	f
+main	..\src\REGEX.C	/^void main (int argc, char **argv)$/;"	f
+main	..\src\VECHO.C	/^main(argc, argv)$/;"	f
+mark	..\src\MARK.C	/^struct mark {$/;"	s	file:
+markpos	..\src\MARK.C	/^markpos(c)$/;"	f
+marks	..\src\MARK.C	/^static struct mark marks[NMARKS];$/;"	v	typeref:struct:mark	file:
+match	..\src\SEARCH.C	/^match(pattern, buf)$/;"	f	file:
+match_brac	..\src\BRAC.C	/^match_brac(obrac, cbrac, forwdir, n)$/;"	f
+maybe_finalize_jump	..\src\REGEX.H	/^  maybe_finalize_jump, \/* Like jump but finalize if safe to do so.$/;"	e	enum:regexpcode
+mca	..\src\COMMAND.C	/^static int mca;			\/* The multicharacter command (action) *\/$/;"	v	file:
+mca_char	..\src\COMMAND.C	/^mca_char(c)$/;"	f	file:
+mca_search	..\src\COMMAND.C	/^mca_search()$/;"	f	file:
+message	..\src\PROMPT.C	/^static char message[250];$/;"	v	file:
+mp	..\src\PROMPT.C	/^static char *mp;$/;"	v	file:
+multi_search	..\src\COMMAND.C	/^multi_search(pattern, n)$/;"	f	file:
+name	..\src\CHARSET.C	/^	char *name;$/;"	m	struct:charset	file:
+name	..\src\POPEN.C	/^	const char *name;		\/* Name of the file (to unlink) *\/$/;"	m	struct:todo	file:
+namelogfile	..\src\MAIN.C	/^public char *	namelogfile = NULL;$/;"	v
+nbufs	..\src\CH.C	/^	int nbufs;$/;"	m	struct:filestate	file:
+need_clr	..\src\OUTPUT.C	/^public int need_clr;$/;"	v
+new_file	..\src\MAIN.C	/^public int	new_file;$/;"	v
+new_ifile	..\src\IFILE.C	/^new_ifile(filename, prev)$/;"	f	file:
+next	..\src\CH.C	/^	struct buf *next, *prev;   \/* Must be first to match struct buf *\/$/;"	m	struct:filestate	typeref:struct:filestate::buf	file:
+next	..\src\CH.C	/^	struct buf *next, *prev;  \/* Must be first to match struct filestate *\/$/;"	m	struct:buf	typeref:struct:buf::buf	file:
+next	..\src\LINENUM.C	/^	struct linenum *next;		\/* Link to next in the list *\/$/;"	m	struct:linenum	typeref:struct:linenum::linenum	file:
+next	..\src\POPEN.C	/^	struct todo *next;		\/* Next structure *\/$/;"	m	struct:todo	typeref:struct:todo::todo	file:
+next_ifile	..\src\IFILE.C	/^next_ifile(h)$/;"	f
+nifile	..\src\IFILE.C	/^nifile()$/;"	f
+nohelp	..\src\OPTTBL.C	/^public int nohelp;		\/* Disable the HELP command *\/$/;"	v
+nonpipefile	..\src\CH.C	/^static struct filestate nonpipefile =$/;"	v	typeref:struct:filestate	file:
+nopendopt	..\src\OPTION.C	/^nopendopt()$/;"	f
+nostring	..\src\OPTION.C	/^nostring(c)$/;"	f	file:
+notsyntaxspec	..\src\REGEX.H	/^  notsyntaxspec \/* Matches any character whose syntax differs from the specified. *\/$/;"	e	enum:regexpcode
+notwordbound	..\src\REGEX.H	/^  notwordbound, \/* Succeeds if not at a word boundary *\/$/;"	e	enum:regexpcode
+notwordchar	..\src\REGEX.H	/^  notwordchar, \/* Matches any char that is not a word-constituent *\/$/;"	e	enum:regexpcode
+null_line	..\src\LINE.C	/^null_line()$/;"	f
+number	..\src\COMMAND.C	/^static int number;		\/* The number typed by the user *\/$/;"	v	file:
+ob	..\src\OUTPUT.C	/^static char *ob = obuf;$/;"	v	file:
+obscure_syntax	..\src\REGEX.C	/^static int obscure_syntax = 0;$/;"	v	file:
+obuf	..\src\OUTPUT.C	/^static char obuf[1024];$/;"	v	file:
+odefault	..\src\OPTION.H	/^	int odefault;		\/* Default value *\/$/;"	m	struct:option
+odesc	..\src\OPTION.H	/^	char *odesc[3];		\/* Description of each value *\/$/;"	m	struct:option
+offset	..\src\CH.C	/^	int offset;$/;"	m	struct:filestate	file:
+offset_t	..\src\DEFINES.H	37;"	d
+ofunc	..\src\OPTION.H	/^	void (*ofunc)();	\/* Pointer to special handling function *\/$/;"	m	struct:option
+old_ifile	..\src\MAIN.C	/^public IFILE	old_ifile = NULL_IFILE;$/;"	v
+oletter	..\src\OPTION.H	/^	char oletter;		\/* The controlling letter (a-z) *\/$/;"	m	struct:option
+on_failure_jump	..\src\REGEX.H	/^  on_failure_jump,     \/* followed by two bytes giving relative address of place$/;"	e	enum:regexpcode
+onscreen	..\src\POSITION.C	/^onscreen(pos)$/;"	f
+open_getchr	..\src\TTYIN.C	/^open_getchr()$/;"	f
+opt_W	..\src\OPTFUNC.C	/^opt_W(type, s)$/;"	f
+opt__L	..\src\OPTFUNC.C	/^opt__L(type, s)$/;"	f
+opt__O	..\src\OPTFUNC.C	/^opt__O(type, s)$/;"	f
+opt__P	..\src\OPTFUNC.C	/^opt__P(type, s)$/;"	f
+opt__T	..\src\OPTFUNC.C	/^opt__T(type, s)$/;"	f
+opt_b	..\src\OPTFUNC.C	/^opt_b(type, s)$/;"	f
+opt_k	..\src\OPTFUNC.C	/^opt_k(type, s)$/;"	f
+opt_l	..\src\OPTFUNC.C	/^opt_l(type, s)$/;"	f
+opt_o	..\src\OPTFUNC.C	/^opt_o(type, s)$/;"	f
+opt_p	..\src\OPTFUNC.C	/^opt_p(type, s)$/;"	f
+opt_prompt	..\src\OPTION.C	/^opt_prompt(c)$/;"	f
+opt_query	..\src\OPTFUNC.C	/^opt_query(type, s)$/;"	f
+opt_t	..\src\OPTFUNC.C	/^opt_t(type, s)$/;"	f
+opt_v	..\src\OPTFUNC.C	/^opt_v(type, s)$/;"	f
+optchar	..\src\COMMAND.C	/^static char optchar;$/;"	v	file:
+optflag	..\src\COMMAND.C	/^static int optflag;$/;"	v	file:
+option	..\src\OPTION.H	/^struct option$/;"	s
+option	..\src\OPTTBL.C	/^static struct option option[] =$/;"	v	typeref:struct:option	file:
+optstring	..\src\OPTION.C	/^optstring(s, c)$/;"	f	file:
+ospeed	..\src\SCREEN.C	/^\/*extern*\/ short ospeed;	\/* Terminal output baud rate *\/$/;"	v
+otype	..\src\OPTION.H	/^	char otype;		\/* Type of the option *\/$/;"	m	struct:option
+output_mode	..\src\OPTTBL.C	/^public int output_mode;		\/* Which screen output method *\/$/;"	v
+ovar	..\src\OPTION.H	/^	int *ovar;		\/* Pointer to the associated variable *\/$/;"	m	struct:option
+overstrike	..\src\LINE.C	/^static int overstrike;		\/* Next char should overstrike previous char *\/$/;"	v	file:
+p_int	..\src\LESS.H	/^	int p_int;$/;"	m	union:parg
+p_string	..\src\LESS.H	/^	char *p_string;$/;"	m	union:parg
+pappend	..\src\LINE.C	/^pappend(c)$/;"	f
+parg	..\src\LESS.H	/^typedef union parg$/;"	u
+pclose	..\src\POPEN.C	/^pclose(FILE *f)$/;"	f
+pdone	..\src\LINE.C	/^pdone(endline)$/;"	f
+pendc	..\src\LINE.C	/^static char pendc;$/;"	v	file:
+pendopt	..\src\OPTION.C	/^static struct option *pendopt;$/;"	v	typeref:struct:option	file:
+pipe_data	..\src\LSYSTEM.C	/^pipe_data(cmd, spos, epos)$/;"	f
+pipe_mark	..\src\LSYSTEM.C	/^pipe_mark(c, cmd)$/;"	f
+pipec	..\src\COMMAND.C	/^static char pipec;$/;"	v	file:
+pipefile	..\src\CH.C	/^static struct filestate pipefile =$/;"	v	typeref:struct:filestate	file:
+plinenum	..\src\LINE.C	/^plinenum(pos)$/;"	f
+plusoption	..\src\OPTION.C	/^public int plusoption;$/;"	v
+pool	..\src\LINENUM.C	/^static struct linenum pool[NPOOL];	\/* The pool itself *\/$/;"	v	typeref:struct:linenum	file:
+popen	..\src\POPEN.C	/^popen(const char *command, const char *t)$/;"	f
+pos	..\src\LESS.H	/^	POSITION pos;$/;"	m	struct:scrpos
+pos	..\src\LINENUM.C	/^	POSITION pos;			\/* File position *\/$/;"	m	struct:linenum	file:
+pos_clear	..\src\POSITION.C	/^pos_clear()$/;"	f
+pos_init	..\src\POSITION.C	/^pos_init()$/;"	f
+position	..\src\POSITION.C	/^position(where)$/;"	f
+pr_expand	..\src\PROMPT.C	/^pr_expand(proto, maxwidth)$/;"	f
+pr_string	..\src\PROMPT.C	/^pr_string()$/;"	f
+pr_type	..\src\OPTTBL.C	/^public int pr_type;		\/* Type of prompt (short, medium, long) *\/$/;"	v
+prchar	..\src\CHARSET.C	/^prchar(c)$/;"	f
+prev	..\src\CH.C	/^	struct buf *next, *prev;   \/* Must be first to match struct buf *\/$/;"	m	struct:filestate	typeref:struct:filestate::	file:
+prev	..\src\CH.C	/^	struct buf *next, *prev;  \/* Must be first to match struct filestate *\/$/;"	m	struct:buf	typeref:struct:buf::	file:
+prev	..\src\LINENUM.C	/^	struct linenum *prev;		\/* Line to previous in the list *\/$/;"	m	struct:linenum	typeref:struct:linenum::linenum	file:
+prev_ifile	..\src\IFILE.C	/^prev_ifile(h)$/;"	f
+prewind	..\src\LINE.C	/^prewind()$/;"	f
+print_buf	..\src\REGEX.C	/^print_buf (bufp)$/;"	f
+printchar	..\src\REGEX.C	/^void printchar (int c)$/;"	f
+printf	..\src\REGEX.C	113;"	d	file:
+progname	..\src\MAIN.C	/^public char *	progname;$/;"	v
+prompt	..\src\COMMAND.C	/^prompt()$/;"	f	file:
+propt	..\src\OPTION.C	/^propt(c)$/;"	f	file:
+protochar	..\src\PROMPT.C	/^protochar(c, where)$/;"	f	file:
+prproto	..\src\PROMPT.C	/^public char *prproto[3];$/;"	v
+psignals	..\src\SIGNAL.C	/^psignals()$/;"	f
+public	..\src\LESS.H	16;"	d
+put_line	..\src\OUTPUT.C	/^put_line()$/;"	f
+putarg	..\src\SETARGV.C	/^static void putarg(from, to, lcase)$/;"	f	file:
+putbs	..\src\SCREEN.C	/^putbs()$/;"	f
+putchar	..\src\REGEX.C	112;"	d	file:
+putchr	..\src\OUTPUT.C	/^putchr(c)$/;"	f
+putnl	..\src\VECHO.C	/^int putnl;$/;"	v
+putstr	..\src\OUTPUT.C	/^putstr(s)$/;"	f
+pwidth	..\src\LINE.C	/^pwidth(c, a)$/;"	f	file:
+query	..\src\OUTPUT.C	/^query(fmt, parg)$/;"	f
+quiet	..\src\OPTTBL.C	/^public int quiet;		\/* Should we suppress the audible bell? *\/$/;"	v
+quit	..\src\MAIN.C	/^quit(status)$/;"	f
+quit_at_eof	..\src\OPTTBL.C	/^public int quit_at_eof;		\/* Quit after hitting end of file twice *\/$/;"	v
+quitting	..\src\MAIN.C	/^public int	quitting;$/;"	v
+raw_mode	..\src\SCREEN.C	/^raw_mode(on)$/;"	f
+re_comp	..\src\REGEX.C	/^re_comp (s)$/;"	f
+re_comp_buf	..\src\REGEX.C	/^static struct re_pattern_buffer re_comp_buf = {NULL,0,0,NULL,NULL,0,0};$/;"	v	typeref:struct:re_pattern_buffer	file:
+re_compile_fastmap	..\src\REGEX.C	/^re_compile_fastmap (bufp)$/;"	f
+re_compile_pattern	..\src\REGEX.C	/^re_compile_pattern (pattern, size, bufp)$/;"	f
+re_exec	..\src\REGEX.C	/^re_exec (s)$/;"	f
+re_match	..\src\REGEX.C	/^re_match (pbufp, string, size, pos, regs)$/;"	f
+re_match_2	..\src\REGEX.C	/^re_match_2 (pbufp, string1_arg, size1, string2_arg, size2, pos, regs, mstop)$/;"	f
+re_max_failures	..\src\REGEX.C	/^int re_max_failures = 2000;$/;"	v
+re_pattern_buffer	..\src\REGEX.H	/^struct re_pattern_buffer$/;"	s
+re_registers	..\src\REGEX.H	/^struct re_registers$/;"	s
+re_search	..\src\REGEX.C	/^re_search (pbufp, string, size, startpos, range, regs)$/;"	f
+re_search_2	..\src\REGEX.C	/^re_search_2 (pbufp, string1, size1, string2, size2, startpos, range, regs, mstop)$/;"	f
+re_set_syntax	..\src\REGEX.C	/^re_set_syntax (int syntax)$/;"	f
+re_syntax_table	..\src\REGEX.C	/^char *re_syntax_table;$/;"	v
+re_syntax_table	..\src\REGEX.C	/^static char re_syntax_table[256];$/;"	v	file:
+read_keyb	..\src\compiler.c	/^unsigned short read_keyb() {$/;"	f
+read_label	..\src\OS.C	/^static jmp_buf read_label;$/;"	v	file:
+reading	..\src\OS.C	/^public int reading;$/;"	v
+refresh_on_quit	..\src\OPTTBL.C	/^public int refresh_on_quit;	\/* Repaint screen on quit, if possible *\/$/;"	v
+regexpcode	..\src\REGEX.H	/^enum regexpcode$/;"	g
+repaint	..\src\JUMP.C	/^repaint()$/;"	f
+restore_screen	..\src\compiler.h	12;"	d
+s_proto	..\src\PROMPT.C	/^static char s_proto[] =$/;"	v	file:
+save	..\src\MAIN.C	/^save(s)$/;"	f
+sc_addline	..\src\SCREEN.C	/^	*sc_addline,		\/* Add line, scroll down following lines *\/$/;"	v	file:
+sc_b_in	..\src\SCREEN.C	/^	*sc_b_in,		\/* Enter bold mode *\/$/;"	v	file:
+sc_b_out	..\src\SCREEN.C	/^	*sc_b_out,		\/* Exit bold mode *\/$/;"	v	file:
+sc_backspace	..\src\SCREEN.C	/^	*sc_backspace,		\/* Backspace cursor *\/$/;"	v	file:
+sc_bl_in	..\src\SCREEN.C	/^	*sc_bl_in,		\/* Enter blink mode *\/$/;"	v	file:
+sc_bl_out	..\src\SCREEN.C	/^	*sc_bl_out,		\/* Exit blink mode *\/$/;"	v	file:
+sc_clear	..\src\SCREEN.C	/^	*sc_clear,		\/* Clear screen *\/$/;"	v	file:
+sc_deinit	..\src\SCREEN.C	/^	*sc_deinit;		\/* Exit terminal de-initialization *\/$/;"	v	file:
+sc_eol_clear	..\src\SCREEN.C	/^	*sc_eol_clear,		\/* Clear to end of line *\/$/;"	v	file:
+sc_height	..\src\SCREEN.C	/^public int sc_width, sc_height;	\/* Height & width of screen *\/$/;"	v
+sc_home	..\src\SCREEN.C	/^	*sc_home,		\/* Cursor home *\/$/;"	v	file:
+sc_init	..\src\SCREEN.C	/^	*sc_init,		\/* Startup terminal initialization *\/$/;"	v	file:
+sc_lower_left	..\src\SCREEN.C	/^	*sc_lower_left,		\/* Cursor to last line, first column *\/$/;"	v	file:
+sc_move	..\src\SCREEN.C	/^	*sc_move,		\/* General cursor positioning *\/$/;"	v	file:
+sc_pad	..\src\SCREEN.C	/^	*sc_pad,		\/* Pad string *\/$/;"	v	file:
+sc_s_in	..\src\SCREEN.C	/^	*sc_s_in,		\/* Enter standout (highlighted) mode *\/$/;"	v	file:
+sc_s_out	..\src\SCREEN.C	/^	*sc_s_out,		\/* Exit standout mode *\/$/;"	v	file:
+sc_u_in	..\src\SCREEN.C	/^	*sc_u_in,		\/* Enter underline mode *\/$/;"	v	file:
+sc_u_out	..\src\SCREEN.C	/^	*sc_u_out,		\/* Exit underline mode *\/$/;"	v	file:
+sc_visual_bell	..\src\SCREEN.C	/^	*sc_visual_bell,	\/* Visual bell (flash screen) sequence *\/$/;"	v	file:
+sc_width	..\src\SCREEN.C	/^public int sc_width, sc_height;	\/* Height & width of screen *\/$/;"	v
+scan_option	..\src\OPTION.C	/^scan_option(s)$/;"	f
+screen_trashed	..\src\FORWBACK.C	/^public int screen_trashed;$/;"	v
+scroll	..\src\MAIN.C	/^public int	scroll;$/;"	v
+scrpos	..\src\LESS.H	/^struct scrpos$/;"	s
+scrsize	..\src\SCREEN.C	/^scrsize(p_height, p_width)$/;"	f
+search	..\src\SEARCH.C	/^search(search_type, pattern, n)$/;"	f
+search_type	..\src\COMMAND.C	/^static int search_type;		\/* The previous type of search *\/$/;"	v	file:
+searchpath	..\src\compiler.c	/^char* searchpath(const char* filename) {$/;"	f
+seek_filesize	..\src\FILENAME.C	/^seek_filesize(f)$/;"	f	file:
+setmark	..\src\MARK.C	/^setmark(c)$/;"	f
+setmp	..\src\PROMPT.C	/^setmp()$/;"	f	file:
+shellcmd	..\src\COMMAND.C	/^static char *shellcmd = NULL;	\/* For holding last shell command for "!!" *\/$/;"	v	file:
+sigs	..\src\SIGNAL.C	/^public int sigs;$/;"	v
+single_char_option	..\src\OPTION.C	/^single_char_option(c)$/;"	f
+skipcond	..\src\PROMPT.C	/^skipcond(p)$/;"	f	file:
+skipsp	..\src\MAIN.C	/^skipsp(s)$/;"	f
+so_e_width	..\src\SCREEN.C	/^public int so_s_width, so_e_width;	\/* Printing width of standout seq *\/$/;"	v
+so_enter	..\src\SCREEN.C	/^so_enter()$/;"	f
+so_exit	..\src\SCREEN.C	/^so_exit()$/;"	f
+so_s_width	..\src\SCREEN.C	/^public int so_s_width, so_e_width;	\/* Printing width of standout seq *\/$/;"	v
+spare	..\src\LINENUM.C	/^static struct linenum *spare;		\/* We always keep one spare entry *\/$/;"	v	typeref:struct:linenum	file:
+squeeze	..\src\OPTTBL.C	/^public int squeeze;		\/* Squeeze multiple blank lines into one *\/$/;"	v
+squish_check	..\src\FORWBACK.C	/^squish_check()$/;"	f	file:
+squished	..\src\FORWBACK.C	/^public int squished;$/;"	v
+start	..\src\REGEX.H	/^  int start[RE_NREGS];$/;"	m	struct:re_registers
+start_mca	..\src\COMMAND.C	/^start_mca(action, prompt)$/;"	f	file:
+start_memory	..\src\REGEX.H	/^  start_memory, \/* starts remembering the text that is matched$/;"	e	enum:regexpcode
+startime	..\src\LINENUM.C	/^static long startime;$/;"	v	file:
+stop	..\src\SIGNAL.C	/^stop(type)$/;"	f	file:
+stop_memory	..\src\REGEX.H	/^  stop_memory, \/* stops remembering the text that is matched$/;"	e	enum:regexpcode
+store_jump	..\src\REGEX.C	/^store_jump (char *from, char opcode, char *to)$/;"	f	file:
+store_pos	..\src\IFILE.C	/^store_pos(ifile, scrpos)$/;"	f
+storec	..\src\LINE.C	/^storec(c, a)$/;"	f	file:
+strtcpy	..\src\MAIN.C	/^strtcpy(to, from, len)$/;"	f
+swindow	..\src\OPTTBL.C	/^public int swindow;		\/* Size of scrolling window *\/$/;"	v
+sync_logfile	..\src\CH.C	/^sync_logfile()$/;"	f
+syntaxspec	..\src\REGEX.H	/^  syntaxspec,  \/* Matches any character whose syntax is specified.$/;"	e	enum:regexpcode
+t_end	..\src\DECODE.C	/^	char *t_end;$/;"	m	struct:tablelist	file:
+t_next	..\src\DECODE.C	/^	struct tablelist *t_next;$/;"	m	struct:tablelist	typeref:struct:tablelist::tablelist	file:
+t_start	..\src\DECODE.C	/^	char *t_start;$/;"	m	struct:tablelist	file:
+table	..\src\POSITION.C	/^static POSITION *table = NULL;	\/* The position table *\/$/;"	v	file:
+table_size	..\src\POSITION.C	/^static int table_size;$/;"	v	file:
+tablelist	..\src\DECODE.C	/^struct tablelist$/;"	s	file:
+tables	..\src\DECODE.C	/^static struct tablelist *tables = &deftable;$/;"	v	typeref:struct:tablelist	file:
+tabstop	..\src\OPTTBL.C	/^public int tabstop;		\/* Tab settings *\/$/;"	v
+tagfile	..\src\TAGS.C	/^public char *tagfile;$/;"	v
+tagoption	..\src\OPTFUNC.C	/^public int tagoption = 0;$/;"	v
+tagpattern	..\src\TAGS.C	/^public char *tagpattern;$/;"	v
+tags	..\src\TAGS.C	/^public char *tags = "tags";$/;"	v
+tagsearch	..\src\TAGS.C	/^tagsearch()$/;"	f
+tchar	..\src\LESSKEY.C	/^tchar(pp)$/;"	f
+tellpos	..\src\CH.C	391;"	d	file:
+textbackground	..\src\compiler.h	18;"	d
+textcolor	..\src\compiler.h	17;"	d
+thisfile	..\src\CH.C	/^static struct filestate *thisfile;$/;"	v	typeref:struct:filestate	file:
+todo	..\src\POPEN.C	/^static struct todo {$/;"	s	file:
+todolist	..\src\POPEN.C	/^} *todolist;$/;"	v	typeref:struct:todo	file:
+toggle_option	..\src\OPTION.C	/^toggle_option(c, s, how_toggle)$/;"	f
+top_scroll	..\src\OPTTBL.C	/^public int top_scroll;		\/* Repaint screen from top?$/;"	v
+toupper	..\src\OPTTBL.C	8;"	d	file:
+translate	..\src\REGEX.H	/^  char *translate;    \/* Translate table to apply to all characters before comparing.$/;"	m	struct:re_pattern_buffer
+tty	..\src\TTYIN.C	/^static int tty;$/;"	v	file:
+twiddle	..\src\OPTTBL.C	/^public int twiddle;		\/* Display "~" for lines after EOF *\/$/;"	v
+u_interrupt	..\src\SIGNAL.C	/^u_interrupt(type)$/;"	f	file:
+ul_e_width	..\src\SCREEN.C	/^public int ul_s_width, ul_e_width;	\/* Printing width of underline seq *\/$/;"	v
+ul_enter	..\src\SCREEN.C	/^ul_enter()$/;"	f
+ul_exit	..\src\SCREEN.C	/^ul_exit()$/;"	f
+ul_s_width	..\src\SCREEN.C	/^public int ul_s_width, ul_e_width;	\/* Printing width of underline seq *\/$/;"	v
+ungetcc	..\src\COMMAND.C	/^ungetcc(c)$/;"	f
+ungetsc	..\src\COMMAND.C	/^ungetsc(s)$/;"	f
+ungot	..\src\COMMAND.C	/^static char ungot[100];$/;"	v	file:
+ungotp	..\src\COMMAND.C	/^static char *ungotp = NULL;$/;"	v	file:
+unused	..\src\REGEX.H	/^  unused,$/;"	e	enum:regexpcode
+upcase	..\src\REGEX.C	/^static char upcase[0400] =$/;"	v	file:
+usage	..\src\LESSKEY.C	/^void usage()$/;"	f
+use_logfile	..\src\EDIT.C	/^use_logfile(filename)$/;"	f
+used	..\src\REGEX.H	/^  int used;          \/* Length of portion of buffer actually occupied *\/$/;"	m	struct:re_pattern_buffer
+usertable	..\src\LESSKEY.C	/^char usertable[MAX_USERCMD];$/;"	v
+vbell	..\src\SCREEN.C	/^vbell()$/;"	f
+vecho	..\src\VECHO.C	/^vecho(str)$/;"	f
+version	..\src\VERSION.C	/^char version[] = "@(#) less  version 177E";$/;"	v
+void	..\src\LESS.H	14;"	d
+what	..\src\POPEN.C	/^	enum action what;		\/* What to do (execute or delete) *\/$/;"	m	struct:todo	typeref:enum:todo::action	file:
+wherechar	..\src\PROMPT.C	/^wherechar(p, wp)$/;"	f	file:
+winch	..\src\SIGNAL.C	/^winch(type)$/;"	f
+window_box	..\src\OPTFUNC.C	/^public char *window_box = NULL;$/;"	v
+wordbeg	..\src\REGEX.H	/^  wordbeg,     \/* Succeeds if at word beginning *\/$/;"	e	enum:regexpcode
+wordbound	..\src\REGEX.H	/^  wordbound,   \/* Succeeds if at a word boundary *\/$/;"	e	enum:regexpcode
+wordchar	..\src\REGEX.H	/^  wordchar,    \/* Matches any word-constituent character *\/$/;"	e	enum:regexpcode
+wordend	..\src\REGEX.H	/^  wordend,     \/* Succeeds if at word end *\/$/;"	e	enum:regexpcode

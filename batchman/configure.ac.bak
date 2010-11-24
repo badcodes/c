@@ -1,0 +1,27 @@
+AC_INIT(src/batchman.c)
+
+PACKAGE=batchman
+VERSION=0.1
+
+#AC_PACKAGE_NAME("Batch Man")
+#AC_PACKAGE_STRING("A Task runner,Useful for downloading")
+#AC_PACKAGE_VERSION("0.1.3")
+#AC_PACKAGE_BUGREPORT("xiaoranzzz@gmail.com")
+
+
+AM_INIT_AUTOMAKE($PACKAGE,$VERSION)
+
+AC_CONFIG_HEADERS(src/config.h)
+
+AC_PROG_CC
+
+AC_CHECK_FUNC(getline) 
+AC_CHECK_FUNC(select)
+AC_CHECK_HEADER(unistd.h)
+#AC_CHECK_FUNC(getline,[AC_DEFINE(HAVE_GETLINE,1,"Have getline()")])
+#AC_CHECK_FUNC(select,[AC_DEFINE(HAVE_SELECT,1,"Have select()")])
+
+
+CFLAGS="$CFLAGS -O2 -Wall"
+AC_OUTPUT(Makefile src/Makefile)
+

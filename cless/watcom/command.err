@@ -1,0 +1,4 @@
+..\src\less.h(121): Warning! W138: No newline at end of file
+..\src\command.c(143): Warning! W131: No prototype found for function 'free'
+..\src\command.c(521): Warning! W131: No prototype found for function 'strlen'
+..\src\command.c(1026): Warning! W131: No prototype found for function 'strcmp'

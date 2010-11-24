@@ -1,0 +1,23 @@
+dstrrpl_.....................................................\bin\nt\string.obj
+list_append_...................................................\bin\nt\list.obj
+list_at_.......................................................\bin\nt\list.obj
+list_insert_...................................................\bin\nt\list.obj
+list_last_.....................................................\bin\nt\list.obj
+list_length_...................................................\bin\nt\list.obj
+list_new_......................................................\bin\nt\list.obj
+stridx_......................................................\bin\nt\string.obj
+strridx_.....................................................\bin\nt\string.obj
+ 
+..\bin\nt\list.obj      Offset=00000000H
+    list_append_
+    list_at_
+    list_insert_
+    list_last_
+    list_length_
+    list_new_
+ 
+..\bin\nt\string.obj    Offset=00000000H
+    dstrrpl_
+    stridx_
+    strridx_
+ 

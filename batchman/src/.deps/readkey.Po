@@ -1,0 +1,3 @@
+readkey.o readkey.o: readkey.c config.h
+
+config.h:

@@ -1,0 +1,3 @@
+..\src\less.h(121): Warning! W138: No newline at end of file
+..\src\line.c(71): Warning! W131: No prototype found for function 'sprintf'
+..\src\line.c(72): Warning! W131: No prototype found for function 'strlen'

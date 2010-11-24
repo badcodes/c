@@ -1,0 +1,4 @@
+..\src\less.h(121): Warning! W138: No newline at end of file
+..\src\screen.c(188): Warning! W131: No prototype found for function 'init_term'
+..\src\screen.c(206): Warning! W131: No prototype found for function 'deinit_term'
+..\src\screen.c(252): Warning! W131: No prototype found for function 'putch'

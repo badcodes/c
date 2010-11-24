@@ -1,0 +1,36 @@
+# Project: p
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = ../../C/p/p.o ../../C/[Code]/string.o ../../C/[Code]/filesystem.o $(RES)
+LINKOBJ  = ../../C/p/p.o ../../C/[Code]/string.o ../../C/[Code]/filesystem.o $(RES)
+LIBS =  -L"D:/Programe/MinGW/lib" -L"d:/Programe/Dev-Cpp/lib"  
+INCS =  -I"D:/Programe/MinGW/include"  -I"d:/Programe/Dev-Cpp/include" 
+CXXINCS =  -I"D:/Programe/MinGW/lib/gcc/mingw32/3.4.2/include"  -I"D:/Programe/MinGW/include/c++/3.4.2/backward"  -I"D:/Programe/MinGW/include/c++/3.4.2/bits"  -I"D:/Programe/MinGW/include/c++/3.4.2/debug"  -I"D:/Programe/MinGW/include/c++/3.4.2/ext"  -I"D:/Programe/MinGW/include/c++/3.4.2/mingw32"  -I"d:/Programe/Dev-Cpp/include" 
+BIN  = p.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before p.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "p.exe" $(LIBS)
+
+../../C/p/p.o: ../../C/p/p.c
+	$(CC) -c ../../C/p/p.c -o ../../C/p/p.o $(CFLAGS)
+
+../../C/[Code]/string.o: ../../C/[Code]/string.c
+	$(CC) -c ../../C/[Code]/string.c -o ../../C/[Code]/string.o $(CFLAGS)
+
+../../C/[Code]/filesystem.o: ../../C/[Code]/filesystem.c
+	$(CC) -c ../../C/[Code]/filesystem.c -o ../../C/[Code]/filesystem.o $(CFLAGS)

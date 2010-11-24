@@ -1,0 +1,4 @@
+..\src\less.h(121): Warning! W138: No newline at end of file
+..\src\os.c(69): Warning! W131: No prototype found for function 'read'
+..\src\os.c(91): Warning! W131: No prototype found for function 'time'
+..\src\os.c(121): Warning! W131: No prototype found for function 'strlen'

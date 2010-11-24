@@ -1,0 +1,44 @@
+!define BLANK ""
+X:\dos\work\c\xrzlib\watcom\list.obj : X:\dos\work\c\xrzlib\src\list.c .AUTO&
+DEPEND
+ @X:
+ cd X:\dos\work\c\xrzlib\watcom
+ *wcc ..\src\list.c -i="R:\Program\develop\watcom/h" -w4 -e25 -zq -od -d2 -b&
+t=dos -fo=.obj -ml
+
+X:\dos\work\c\xrzlib\watcom\os.obj : X:\dos\work\c\xrzlib\src\os.c .AUTODEPE&
+ND
+ @X:
+ cd X:\dos\work\c\xrzlib\watcom
+ *wcc ..\src\os.c -i="R:\Program\develop\watcom/h" -w4 -e25 -zq -od -d2 -bt=&
+dos -fo=.obj -ml
+
+X:\dos\work\c\xrzlib\watcom\string.obj : X:\dos\work\c\xrzlib\src\string.c .&
+AUTODEPEND
+ @X:
+ cd X:\dos\work\c\xrzlib\watcom
+ *wcc ..\src\string.c -i="R:\Program\develop\watcom/h" -w4 -e25 -zq -od -d2 &
+-bt=dos -fo=.obj -ml
+
+X:\dos\work\c\xrzlib\watcom\test.obj : X:\dos\work\c\xrzlib\src\test.c .AUTO&
+DEPEND
+ @X:
+ cd X:\dos\work\c\xrzlib\watcom
+ *wcc ..\src\test.c -i="R:\Program\develop\watcom/h" -w4 -e25 -zq -od -d2 -b&
+t=dos -fo=.obj -ml
+
+X:\dos\work\c\xrzlib\watcom\xrzlib.lib : X:\dos\work\c\xrzlib\watcom\list.ob&
+j X:\dos\work\c\xrzlib\watcom\os.obj X:\dos\work\c\xrzlib\watcom\string.obj &
+X:\dos\work\c\xrzlib\watcom\test.obj .AUTODEPEND
+ @X:
+ cd X:\dos\work\c\xrzlib\watcom
+ %create xrzlib.lb1
+!ifneq BLANK "list.obj os.obj string.obj test.obj"
+ @for %i in (list.obj os.obj string.obj test.obj) do @%append xrzlib.lb1 +'%&
+i'
+!endif
+!ifneq BLANK ""
+ @for %i in () do @%append xrzlib.lb1 +'%i'
+!endif
+ *wlib -b -c -n -q -p=512 xrzlib.lib @xrzlib.lb1
+
