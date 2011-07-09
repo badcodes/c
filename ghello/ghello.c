@@ -18,7 +18,7 @@ int main(int argc,char** argv)
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     g_signal_connect(G_OBJECT(window),"destroy",G_CALLBACK(destroy),NULL);
     g_signal_connect(G_OBJECT(window),"delete_event",G_CALLBACK(destroy),NULL);
-    button = gtk_button_new_with_label("Hello, World!");
+    button = gtk_button_new_with_label("Heloo, World!");
     g_signal_connect(G_OBJECT(button),"clicked",G_CALLBACK(hello),NULL);
     gtk_container_add(GTK_CONTAINER(window),button);
     gtk_widget_show(button);

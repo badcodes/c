@@ -94,5 +94,3 @@ string dstrrpl(const string str,const string txt,const string cs3) {
     result[o1 + l_str - o2 + 1]=0;
     return result;
 }
-
-
