@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="hdstart.c" open="1" top="0" tabpos="1">
+		<Cursor position="1836" topLine="42" />
+	</File>
+	<File name="hdstart.h" open="1" top="1" tabpos="4">
+		<Cursor position="127" topLine="0" />
+	</File>
+	<File name="resource.h" open="1" top="0" tabpos="3">
+		<Cursor position="22" topLine="0" />
+	</File>
+	<File name="resource.rc" open="1" top="0" tabpos="2">
+		<Cursor position="303" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>
