@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1288884995 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\xrzlib\src\os.c
+	"os.h"
+
+1288884995 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\xrzlib\src\os.h
+	<direct.h>
+	<dir.h>
+
+1309699470 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\xrzlib\src\string.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<stddef.h>
+	"string.h"
+
+1288884995 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\xrzlib\src\string.h
+
+1309699480 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\xrzlib\src\test.c
+	<stdio.h>
+	"string.h"
+
+1309699680 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\xrzlib\src\test\list.c
+	<stdio.h>
+	<stdlib.h>
+	"..\list.h"
+
+1288884995 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\xrzlib\src\list.h
+
+1288884995 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\xrzlib\src\list.c
+	<stdlib.h>
+	"list.h"
+	"debug.h"
+
+1288884995 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\xrzlib\src\debug.h
+

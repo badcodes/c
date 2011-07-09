@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Release" />
+	<File name="..\src\list.c" open="1" top="0" tabpos="4">
+		<Cursor position="409" topLine="30" />
+	</File>
+	<File name="..\src\list.h" open="1" top="0" tabpos="1">
+		<Cursor position="489" topLine="0" />
+	</File>
+	<File name="..\src\string.c" open="1" top="0" tabpos="2">
+		<Cursor position="1943" topLine="65" />
+	</File>
+	<File name="..\src\test.c" open="1" top="0" tabpos="3">
+		<Cursor position="365" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>
