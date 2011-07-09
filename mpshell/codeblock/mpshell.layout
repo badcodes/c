@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="..\src\cd.c" open="1" top="0" tabpos="3">
+		<Cursor position="765" topLine="19" />
+	</File>
+	<File name="..\src\cmd.c" open="1" top="0" tabpos="4">
+		<Cursor position="1232" topLine="0" />
+	</File>
+	<File name="..\src\cmd.h" open="1" top="0" tabpos="11">
+		<Cursor position="2208" topLine="29" />
+	</File>
+	<File name="..\src\config.h" open="1" top="0" tabpos="20">
+		<Cursor position="140" topLine="0" />
+	</File>
+	<File name="..\src\debug.h" open="1" top="0" tabpos="18">
+		<Cursor position="84" topLine="0" />
+	</File>
+	<File name="..\src\echo.c" open="1" top="0" tabpos="5">
+		<Cursor position="403" topLine="5" />
+	</File>
+	<File name="..\src\exit.c" open="1" top="0" tabpos="22">
+		<Cursor position="284" topLine="2" />
+	</File>
+	<File name="..\src\filecmd.c" open="1" top="0" tabpos="14">
+		<Cursor position="101" topLine="0" />
+	</File>
+	<File name="..\src\filecmd.h" open="1" top="0" tabpos="24">
+		<Cursor position="282" topLine="0" />
+	</File>
+	<File name="..\src\help.c" open="1" top="0" tabpos="6">
+		<Cursor position="2007" topLine="0" />
+	</File>
+	<File name="..\src\help.h" open="0" top="0" tabpos="0">
+		<Cursor position="230" topLine="0" />
+	</File>
+	<File name="..\src\hstart.c" open="1" top="0" tabpos="7">
+		<Cursor position="226" topLine="8" />
+	</File>
+	<File name="..\src\hstart.h" open="1" top="0" tabpos="1">
+		<Cursor position="94" topLine="0" />
+	</File>
+	<File name="..\src\modpath.c" open="0" top="0" tabpos="0">
+		<Cursor position="104" topLine="0" />
+	</File>
+	<File name="..\src\printf.c" open="1" top="0" tabpos="8">
+		<Cursor position="797" topLine="12" />
+	</File>
+	<File name="..\src\printf.h" open="1" top="0" tabpos="9">
+		<Cursor position="88" topLine="0" />
+	</File>
+	<File name="..\src\run.c" open="1" top="0" tabpos="19">
+		<Cursor position="179" topLine="0" />
+	</File>
+	<File name="..\src\script.c" open="1" top="0" tabpos="10">
+		<Cursor position="1037" topLine="0" />
+	</File>
+	<File name="..\src\utils.c" open="1" top="0" tabpos="12">
+		<Cursor position="2595" topLine="98" />
+	</File>
+	<File name="..\src\utils.h" open="1" top="0" tabpos="15">
+		<Cursor position="1029" topLine="8" />
+	</File>
+	<File name="..\src\version.h" open="1" top="0" tabpos="17">
+		<Cursor position="137" topLine="0" />
+	</File>
+	<File name="..\src\zcmd.c" open="1" top="0" tabpos="2">
+		<Cursor position="1418" topLine="54" />
+	</File>
+	<File name="..\src\zcmd.h" open="1" top="1" tabpos="21">
+		<Cursor position="388" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

@@ -1,0 +1,46 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ZCmd - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\yobe\LOCALS~1\Temp\RSP39.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "../../xrzlib" /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /FR"Debug/" /Fp"Debug/ZCmd.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"W:\dos\work\c\zcmd\src\zcmd.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\yobe\LOCALS~1\Temp\RSP39.tmp" 
+Creating temporary file "C:\DOCUME~1\yobe\LOCALS~1\Temp\RSP3A.tmp" with contents
+[
+../../xrzlib/win32/debug/xrzlib.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/ZCmd.pdb" /debug /machine:I386 /out:"Debug/ZCmd.exe" /pdbtype:sept 
+.\Debug\cd.obj
+.\Debug\cmd.obj
+.\Debug\echo.obj
+.\Debug\exit.obj
+.\Debug\filecmd.obj
+.\Debug\help.obj
+.\Debug\modpath.obj
+.\Debug\printf.obj
+.\Debug\script.obj
+.\Debug\utils.obj
+.\Debug\zcmd.obj
+.\Debug\run.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\yobe\LOCALS~1\Temp\RSP3A.tmp"
+<h3>Output Window</h3>
+Compiling...
+zcmd.c
+Linking...
+Creating command line "bscmake.exe /nologo /o"Debug/ZCmd.bsc"  .\Debug\cd.sbr .\Debug\cmd.sbr .\Debug\echo.sbr .\Debug\exit.sbr .\Debug\filecmd.sbr .\Debug\help.sbr .\Debug\modpath.sbr .\Debug\printf.sbr .\Debug\script.sbr .\Debug\utils.sbr .\Debug\zcmd.sbr .\Debug\run.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+ZCmd.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

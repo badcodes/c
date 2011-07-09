@@ -1,0 +1,190 @@
+# depslib dependency file v1.0
+1309524506 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\mpshell\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1309703491 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\cd.c
+	<stdlib.h>
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"config.h"
+	"xrzlib\os.h"
+	"cmd.h"
+	"cd.h"
+	"xrzlib\debug.h"
+	"utils.h"
+
+1288884995 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\xrzlib\os.h
+	<direct.h>
+	<dir.h>
+
+1309703148 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\cmd.h
+	"config.h"
+
+1288884984 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\cd.h
+	"cmd.h"
+
+1288884995 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\xrzlib\debug.h
+
+1309703684 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\utils.h
+	"config.h"
+	<stdio.h>
+	"xrzlib\list.h"
+
+1288884995 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\xrzlib\list.h
+
+1309703709 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\cmd.c
+	<stdio.h>
+	<string.h>
+	"config.h"
+	"cmd.h"
+	"help.h"
+	"xrzlib\debug.h"
+
+1309702144 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\help.h
+	"cmd.h"
+
+1309703731 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\echo.c
+	<stdio.h>
+	<stdlib.h>
+	"cmd.h"
+	"utils.h"
+	"echo.h"
+
+1288884984 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\echo.h
+	"cmd.h"
+
+1309704578 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\exit.c
+	<ctype.h>
+	<stdlib.h>
+	"cmd.h"
+	"exit.h"
+
+1288884984 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\exit.h
+	"cmd.h"
+
+1309703778 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\filecmd.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	"xrzlib\debug.h"
+	"xrzlib\os.h"
+	"zcmd.h"
+	"utils.h"
+	"version.h"
+	"filecmd.h"
+
+1309702142 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\zcmd.h
+	"version.h"
+	"config.h"
+	"xrzlib\list.h"
+
+1309704019 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\version.h
+	"config.h"
+
+1309702388 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\config.h
+	<windows.h>
+	<tchar.h>
+
+1309702144 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\filecmd.h
+	"cmd.h"
+
+1309703587 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\help.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cmd.h"
+	"help.h"
+
+1309702145 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\modpath.c
+	"utils.h"
+	"modpath.h"
+	"cmd.h"
+
+1288884984 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\modpath.h
+	"cmd.h"
+
+1309703684 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\printf.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"config.h"
+	"xrzlib\debug.h"
+	"cmd.h"
+	"utils.h"
+	"printf.h"
+
+1309702684 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\printf.h
+	"cmd.h"
+
+1309704342 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\run.c
+	<stdlib.h>
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"cmd.h"
+	"debug.h"
+	"utils.h"
+	"run.h"
+
+1309704535 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\debug.h
+
+1288884984 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\run.h
+	"cmd.h"
+
+1309702583 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\script.c
+	<stdio.h>
+	<stdlib.h>
+	"cmd.h"
+	"utils.h"
+	"script.h"
+	"zcmd.h"
+	"filecmd.h"
+
+1288884984 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\script.h
+	"cmd.h"
+
+1309704254 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\utils.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"xrzlib\debug.h"
+	"zcmd.h"
+	"utils.h"
+
+1309704071 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\zcmd.c
+	<windows.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	"config.h"
+	"xrzlib\debug.h"
+	"xrzlib\list.h"
+	"utils.h"
+	"cmd.h"
+	"zcmd.h"
+	"echo.h"
+	"printf.h"
+	"modpath.h"
+	"filecmd.h"
+	"script.h"
+	"exit.h"
+	"cd.h"
+	"run.h"
+
+1309702583 source:e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\hstart.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"xrzlib\debug.h"
+	"cmd.h"
+	"utils.h"
+	"hstart.h"
+
+1309701102 e:\xiaoranzzz\desktop\myplace\myplace\workspace\codebase\c\mpshell\src\hstart.h
+	"cmd.h"
+

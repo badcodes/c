@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="mpshell" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="..\bin\win32\debug\mpshell" prefix_auto="1" extension_auto="1" />
+				<Option object_output="..\bin\win32\debug" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-DWINDOWS" />
+					<Add directory="..\..\mpshell" />
+				</Compiler>
+				<Linker>
+					<Add library="..\xrzlib\libxrzlib.a" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="..\bin\win32\mpshell" prefix_auto="1" extension_auto="1" />
+				<Option object_output="..\bin\win32" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-DNDEBUG" />
+					<Add option="-DWINDOWS" />
+					<Add directory="..\..\mpshell" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="..\xrzlib\libxrzlib.a" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="..\src\cd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\cd.h" />
+		<Unit filename="..\src\cmd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\cmd.h" />
+		<Unit filename="..\src\config.h" />
+		<Unit filename="..\src\debug.h" />
+		<Unit filename="..\src\echo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\echo.h" />
+		<Unit filename="..\src\exit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\exit.h" />
+		<Unit filename="..\src\filecmd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\filecmd.h" />
+		<Unit filename="..\src\help.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\help.h" />
+		<Unit filename="..\src\hstart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\hstart.h" />
+		<Unit filename="..\src\modpath.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\modpath.h" />
+		<Unit filename="..\src\printf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\printf.h" />
+		<Unit filename="..\src\run.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\run.h" />
+		<Unit filename="..\src\script.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\script.h" />
+		<Unit filename="..\src\utils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\utils.h" />
+		<Unit filename="..\src\version.h" />
+		<Unit filename="..\src\zcmd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\zcmd.h" />
+		<Extensions>
+			<code_completion>
+				<search_path add="..\xrzlib" />
+			</code_completion>
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
